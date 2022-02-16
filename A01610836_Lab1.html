@@ -7,10 +7,27 @@
     <body>
         <article>
             <header>
+                <h1>Datos e informacion de contacto</h1>
+            </header>
+            <table>
+                <tr>
+                    <th>Nombre(s):</th>
+                    <th>Matrícula:</th>
+                    <th>Correo Electrónico:</th>
+                </tr>
+                <tr>
+                    <td>Miguel Weiping Tang Feng</td>
+                    <td>A01610836</td>
+                    <td>A01610836@tec.mx</td>
+                </tr>
+            </table>
+        </article>
+        <article>
+            <header>
                 <h1>Artículo sobre mí</h1>
             </header>
             <img src="Foto Miguel Tang.jpg" alt="Foto de Miguel Tang">
-            <p>Mi nombre completo es Miguel Weiping Tang Feng, tengo 21 años y nací en San Luis Potosí, México. </p>
+            <p>Mi nombre completo es Miguel Weiping Tang Feng, tengo 21 años y nací en San Luis Potosí, México.</p>
             <header>
                 <h3>Mis raíces</h2>
             </header>
@@ -48,36 +65,71 @@
             <header>
                 <h1>Preguntas del laboratorio</h1>
                 <ol>
-                    <li>¿Cuál es la diferencia entre Internet y la World Wide Web?</li>
-                    <p></p>
-                    <li>¿Cuáles son las partes de un URL?</li>
-                    <p></p>
-                    <li>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</li>
-                    <p></p>
-                    <li>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</li>
-                    <p></p>
-                    <li>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</li>
-                    <p></p>
-                    <li>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</li>
-                    <p></p>
-                    <li>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</li>
-                    <p></p>
-                    <li>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</li>
-                    <p></p>
-                    <li>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</li>
-                    <p></p>
-                    <li>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</li>
-                    <p></p>
-                    <li>¿Qué componentes de estructura y estilo tiene una tabla?</li>
-                    <p></p>
-                    <li>¿Cuáles son los principales controles de una forma HTML5?</li>
-                    <p></p>
-                    <li>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</li>
-                    <p></p>
-                    <li>¿Cuál es el ciclo de vida de los sistemas de información?</li>
-                    <p></p>
-                    <li>¿Cuál es el ciclo de desarrollo de sistemas de información?</li>
-                    <p></p>
+                    <li><strong>¿Cuál es la diferencia entre Internet y la World Wide Web?</strong></li>
+                    <p>La World Wide Web son las páginas que visualizamos cuando estamos conectados en línea dentro de un dispositivo y el Internet es la red de computadoras conectadas en la cual trabaja la world wide web.</p>
+                    <li><strong>¿Cuáles son las partes de un URL?</strong></li>
+                    <p>Consiste de cuatro partes:</p>
+                    <ul>
+                        <li>Protocolo: Usualmente son HTTP o HTTPS, y son protocolos de comunicación</li>
+                        <li>Dominio: Nombre usado para identificar la dirección ip  del recurso</li>
+                        <li>Ruta: Especifica la ubicación del recurso dentro del servidor</li>
+                        <li>Parametros: Datos adicionales para identificar o filtrar el recurso en el servidor</li>
+                    </ul>
+                    <li><strong>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</strong></li>
+                    <br>
+                    <ul>
+                        <li>GET: Método para pedir datos de un recurso sin cambiar su estado</li>
+                        <li>HEAD: Método similar a GET, con la diferencia de que no devuelven el cuerpo del mensaje como respuesta</li>
+                        <li>POST: Método para enviar datos a un servidor para crear un recurso</li>
+                        <li>PUT: Método para actualizar un recurso existente en el servidor</li>
+                        <li>PATCH: Método para aplicar modificaciones parciales a un recurso</li>
+                        <li>DELETE: Método para eliminar un recurso específico</li>
+                    </ul>>
+                    <li><strong>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</strong></li>
+                    <p>El método POST, ya que al enviar este tipo de información es necesario que el cuerpo esté encriptado por cuestiones de seguridad</p>
+                    <li><strong>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</strong></li>
+                    <p>El método GET, ya que cada URL tiene una dirección de IP a la que está conectada y para acceder al a página es necesario obtener esa dirección IP</p>
+                    <li><strong>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</strong></li>
+                    <p>Que corrió exitosamente y no hay errores</p>
+                    <li><strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</strong></li>
+                    <p>No, ya que habla de que el usuario intenta buscar una URL que no existe. Sin embargo, también puede tratarse de un elemento que sí existe en el servidor, pero se muestra este error para ocultar la existencia del recurso en lugar de mostrar el error 403 que habla sobre no tener los permisos suficientes para acceder</p>
+                    <li><strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</strong></li>
+                    <p>Sí, ya que se trata de un error dentro del servidor</p>
+                    <li><strong>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</strong></li>
+                    <p>Significa que un atributo está obsoleto por otros más actuales, sin embargo, no implica que no se puedan usar, ya que HTML tiene la característica de tener una compatibilidad con las versiones anteriores</p>
+                    <li><strong>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</strong></li>
+                    <p>Una de las principales diferencias entre HTML 4 y HTML 5, es que en su versión anterior no suportaba archivos multimedia, mientras que en el más actual sí lo permite. Además, en su versión nueva, proporciona nuevos elementos como etiquetas semánticas que proporcionan estructura a la página como nav, header, footer, entre otros.</p>
+                    <li><strong>¿Qué componentes de estructura y estilo tiene una tabla?</strong></li>
+                    <p>La estructura de las tablas tiene celdas representadas con la etiqueta td, filas representadas con la etiqueta tr y títulos de celdas representadas con la etiquta th. También es posible agrupar la tabla en diferentes partes utilizando las etiquetas thead, tbody y tfoot. En cuanto a la parte de estilos, las tablas tienen etiquetas como caption, colgroup y col. </p>
+                    <li><strong>¿Cuáles son los principales controles de una forma HTML5?</strong></li>
+                    <ul>
+                        <li>Input</li>
+                        <li>Label</li>
+                        <li>Select</li>
+                        <li>Textarea</li>
+                        <li>Button</li>
+                        <li>Fieldset</li>
+                        <li>Legend</li>
+                        <li>DataList</li>
+                        <li>Output</li>
+                        <li>Option</li>
+                        <li>Optgroup</li>
+                    </ul>
+                    <li><strong>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</strong></li>
+                    <img src="Soporte HTML5.PNG" alt="Imagen de soporte HML5">
+                    <p>De acuerdo con la página mi navegador Opera 83.0 tiene una puntuación de 526/555 de soporte para HTML5</p>
+                    <li><strong>¿Cuál es el ciclo de vida de los sistemas de información?</strong></li>
+                    <ol>
+                        <li>Planificación: encontrar el alcance del problema y determinar las diferentes soluciones al igual que los recursos, costos, tiempo, beneficios, entre otros</li>
+                        <li>Análisis del sistema y requisitos: considerar los requisitos funcionales del proyecto o de la solución. También analiza las necesidades de los usuarios para cumplir con sus expectativas</li>
+                        <li>Diseño del sistema: describe detalladamente las especificaciones necesarias, características y operaciones que deberá de satisfacer el sistema propuesto.</li>
+                        <li>Desarrollo: inicia la producción.</li>
+                        <li>Integración y testing: implica la integración del sistema y el testeo de sus programas y procedimientos. Es normalmente llevado a cabo por un Quality Assurance profesional para determinar si se lograron los objetivos propuestos en el inicio del proyecto</li>
+                        <li>Implementación: fase en donde el programa comienza a ser usado  y se transfieren los datos y componentes del sistema viejo al nuevo.</li>
+                        <li>Operaciones y mantenimiento: los usuarios afinan el sistema para mejorar el rendimiento, agregar nuevas herramientas o proponer nuevos requisitos.</li>
+                    </ol>
+                    <li><strong>¿Cuál es el ciclo de desarrollo de sistemas de información?</strong></li>
+                    <p>Está dentro del ciclo de vida de los sistemas de información y es donde comienza a escribirse el código y a contruir la aplicación con base en los diseños y especificaciones escritas en las fases anteriores.</p>
                 </ol>
             </header>
             <p></p>
