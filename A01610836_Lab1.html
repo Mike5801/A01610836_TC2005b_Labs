@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <title>Laboratorio 1</title>
@@ -28,15 +28,15 @@
             <header>
                 <h1>Artículo sobre mí</h1>
             </header>
-            <img src="Foto Miguel Tang.jpg" alt="Foto de Miguel Tang">
+            <img src="FotoMiguelTang.jpg" alt="Foto de Miguel Tang">
             <p>Mi nombre completo es Miguel Weiping Tang Feng, tengo 21 años y nací en San Luis Potosí, México.</p>
             <header>
-                <h3>Mis raíces</h2>
+                <h3>Mis raíces</h3>
             </header>
             <img src="https://viajes.nationalgeographic.com.es/medio/2022/02/15/linternas-china_2e13182d_480x480.jpg" alt="Imagen de farolas chinas">
             <p>Como se puede apreciar en el nombre, yo no soy totalmente mexicano, sino que provengo de una familia china y, a pesar de que no sé hablar el chino mandarin, se hablar el cantonés que es parecido al mandarin con la diferencia de que la pronunciación de la mayoría de los caracteres es diferentes.</p>
             <header>
-                <h3>Mi historia en el tec</h2>
+                <h3>Mi historia en el tec</h3>
             </header>
             <img src="https://www.themarkethink.com/wp-content/uploads/2014/08/logo-tec.jpg" alt="Imagen de logo del Tecnologico de Monterrey">
             <p>Llevo estudiando en el Tecnológico de Monterrey desde que inicié la preparatoria en el campus San Luis Potosí. En el último semestre de mi prepa comenzó la pandemia, por lo que me tocó vivir los últimos meses en modo remoto.Después de graduarme de manera virtual, comencé la universidad en el Tecnológico de Monterrey de forma remota y estuve tres semestres en San Luis Potosí y recientemente me mudé solo a Querétaro para iniciar las clases presenciales en este campus.</p>
@@ -50,7 +50,7 @@
             </p>
 
             <header>
-                <h3>Mis gustos</h2>
+                <h3>Mis gustos</h3>
             </header>
             <img src="https://img.freepik.com/vector-gratis/mano-sosteniendo-tablero-gustos-disgustos-iconos_16734-188.jpg" alt="Imagen de like y dislike">
             <p>Por lo general, me gusta escuchar música, salir a caminar, jugar a videojuegos y resolver problemas tipo rompecabezas. También me gusta ver anime y me interesa cierta parte de la cultura japonesa como la música j-pop.</p>
@@ -80,101 +80,98 @@
         <article>
             <header>
                 <h1>Preguntas del laboratorio</h1>
-                <ol>
-                    <li><strong>¿Cuál es la diferencia entre Internet y la World Wide Web?</strong></li>
-                    <p>La World Wide Web son las páginas que visualizamos cuando estamos conectados en línea dentro de un dispositivo y el Internet es la red de computadoras conectadas en la cual trabaja la world wide web. (BBC, s.f.)</p>
-                    <li><strong>¿Cuáles son las partes de un URL?</strong></li>
-                    <p>Consiste de cuatro partes:</p>
-                    <ul>
-                        <li>Protocolo: Usualmente son HTTP o HTTPS, y son protocolos de comunicación</li>
-                        <li>Dominio: Nombre usado para identificar la dirección ip  del recurso</li>
-                        <li>Ruta: Especifica la ubicación del recurso dentro del servidor</li>
-                        <li>Parametros: Datos adicionales para identificar o filtrar el recurso en el servidor</li>
-                    </ul>
-                    <p>(Goran, A., 2019)</p>
-                    <li><strong>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</strong></li>
+                <dl>
+                    <dt><strong>1. ¿Cuál es la diferencia entre Internet y la World Wide Web?</strong></dt>
+                    <dd>La World Wide Web son las páginas que visualizamos cuando estamos conectados en línea dentro de un dispositivo y el Internet es la red de computadoras conectadas en la cual trabaja la world wide web. (BBC, s.f.)</dd>
+                    <dt><strong>2. ¿Cuáles son las partes de un URL?</strong></dt>
+                    <dd>Consiste de cuatro partes:
                     <br>
-                    <ul>
-                        <li>GET: Método para pedir datos de un recurso sin cambiar su estado</li>
-                        <li>HEAD: Método similar a GET, con la diferencia de que no devuelven el cuerpo del mensaje como respuesta</li>
-                        <li>POST: Método para enviar datos a un servidor para crear un recurso</li>
-                        <li>PUT: Método para actualizar un recurso existente en el servidor</li>
-                        <li>PATCH: Método para aplicar modificaciones parciales a un recurso</li>
-                        <li>DELETE: Método para eliminar un recurso específico</li>
-                    </ul>>
-                    <p>(Goran, A., 2019)</p>
-                    <li><strong>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</strong></li>
-                    <p>El método POST, ya que al enviar este tipo de información es necesario que el cuerpo esté encriptado por cuestiones de seguridad. (Brock, R., 2019)</p>
-                    <li><strong>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</strong></li>
-                    <p>El método GET, ya que cada URL tiene una dirección de IP a la que está conectada y para acceder al a página es necesario obtener esa dirección IP. (Maneesha, W., 2017)</p>
-                    <li><strong>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</strong></li>
-                    <p>Que corrió exitosamente y no hay errores. (Mozilla, s.f.)</p>
-                    <li><strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</strong></li>
-                    <p>No, ya que habla de que el usuario intenta buscar una URL que no existe. Sin embargo, también puede tratarse de un elemento que sí existe en el servidor, pero se muestra este error para ocultar la existencia del recurso en lugar de mostrar el error 403 que habla sobre no tener los permisos suficientes para acceder.(Mozilla, s.f.)</p>
-                    <li><strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</strong></li>
-                    <p>Sí, ya que se trata de un error dentro del servidor. (Mozilla, s.f.)</p>
-                    <li><strong>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</strong></li>
-                    <p>Significa que un atributo está obsoleto por otros más actuales, sin embargo, no implica que no se puedan usar, ya que HTML tiene la característica de tener una compatibilidad con las versiones anteriores. (W3C Superseded Recommendation, s.f.)</p>
-                    <li><strong>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</strong></li>
-                    <p>Una de las principales diferencias entre HTML 4 y HTML 5, es que en su versión anterior no suportaba archivos multimedia, mientras que en el más actual sí lo permite. Además, en su versión nueva, proporciona los elementos semánticos que proporcionan estructura a la página como nav, header, footer, entre otros. (GeeksforGeeks, 2021)</p>
-                    <li><strong>¿Qué componentes de estructura y estilo tiene una tabla?</strong></li>
-                    <p>La estructura de las tablas tiene celdas representadas con la etiqueta td, filas representadas con la etiqueta tr y títulos de celdas representadas con la etiquta th. También es posible agrupar la tabla en diferentes partes utilizando las etiquetas thead, tbody y tfoot. En cuanto a la parte de estilos, las tablas tienen etiquetas como caption, colgroup y col. (W3Schools, s.f.)</p>
-                    <li><strong>¿Cuáles son los principales controles de una forma HTML5?</strong></li>
-                    <p>Los principales controles de forma son los siguientes:</p>
-                    <ul>
-                        <li>Input</li>
-                        <li>Label</li>
-                        <li>Select</li>
-                        <li>Textarea</li>
-                        <li>Button</li>
-                        <li>Fieldset</li>
-                        <li>Legend</li>
-                        <li>DataList</li>
-                        <li>Output</li>
-                        <li>Option</li>
-                        <li>Optgroup</li>
-                    </ul>
-                    <p>(W3Schools, s.f.)</p>
-                    <li><strong>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</strong></li>
-                    <img src="Soporte HTML5.PNG" alt="Imagen de soporte HML5">
-                    <p>De acuerdo con la página mi navegador Opera 83.0 tiene una puntuación de 526/555 de soporte para HTML5</p>
-                    <li><strong>¿Cuál es el ciclo de vida de los sistemas de información?</strong></li>
-                    <ol>
-                        <li>Planificación: encontrar el alcance del problema y determinar las diferentes soluciones al igual que los recursos, costos, tiempo, beneficios, entre otros</li>
-                        <li>Análisis del sistema y requisitos: considerar los requisitos funcionales del proyecto o de la solución. También analiza las necesidades de los usuarios para cumplir con sus expectativas</li>
-                        <li>Diseño del sistema: describe detalladamente las especificaciones necesarias, características y operaciones que deberá de satisfacer el sistema propuesto.</li>
-                        <li>Desarrollo: inicia la producción.</li>
-                        <li>Integración y testing: implica la integración del sistema y el testeo de sus programas y procedimientos. Es normalmente llevado a cabo por un Quality Assurance profesional para determinar si se lograron los objetivos propuestos en el inicio del proyecto</li>
-                        <li>Implementación: fase en donde el programa comienza a ser usado  y se transfieren los datos y componentes del sistema viejo al nuevo.</li>
-                        <li>Operaciones y mantenimiento: los usuarios afinan el sistema para mejorar el rendimiento, agregar nuevas herramientas o proponer nuevos requisitos.</li>
-                    </ol>
-                    <p>(Innovative Architects, s.f.)</p>
-                    <li><strong>¿Cuál es el ciclo de desarrollo de sistemas de información?</strong></li>
-                    <p>Está dentro del ciclo de vida de los sistemas de información y es donde comienza a escribirse el código y a contruir la aplicación con base en los diseños y especificaciones escritas en las fases anteriores. (Mark, P., 2020)</p>
-                </ol>
+                        -Protocolo: Usualmente son HTTP o HTTPS, y son protocolos de comunicación<br>
+                        -Dominio: Nombre usado para identificar la dirección ip  del recurso<br>
+                        -Ruta: Especifica la ubicación del recurso dentro del servidor<br>
+                        -Parametros: Datos adicionales para identificar o filtrar el recurso en el servidor<br>
+                    <br>
+                    (Goran, A., 2019)</dd>
+                    <dt><strong>3. ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</strong></dt>
+                    <dd>
+                        -GET: Método para pedir datos de un recurso sin cambiar su estado<br>
+                        -HEAD: Método similar a GET, con la diferencia de que no devuelven el cuerpo del mensaje como respuesta<br>
+                        -POST: Método para enviar datos a un servidor para crear un recurso
+                        -PUT: Método para actualizar un recurso existente en el servidor<br>
+                        -PATCH: Método para aplicar modificaciones parciales a un recurso<br>
+                        -DELETE: Método para eliminar un recurso específico<br>
+                    <br>
+                    (Goran, A., 2019)</dd>
+                    <dt><strong>4. ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</strong></dt>
+                    <dd>El método POST, ya que al enviar este tipo de información es necesario que el cuerpo esté encriptado por cuestiones de seguridad. (Brock, R., 2019)</dd>
+                    <dt><strong>5. ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</strong></dt>
+                    <dd>El método GET, ya que cada URL tiene una dirección de IP a la que está conectada y para acceder al a página es necesario obtener esa dirección IP. (Maneesha, W., 2017)</dd>
+                    <dt><strong>6. Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</strong></dt>
+                    <dd>Que corrió exitosamente y no hay errores. (Mozilla, s.f.)</dd>
+                    <dt><strong>7. ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</strong></dt>
+                    <dd>No, ya que habla de que el usuario intenta buscar una URL que no existe. Sin embargo, también puede tratarse de un elemento que sí existe en el servidor, pero se muestra este error para ocultar la existencia del recurso en lugar de mostrar el error 403 que habla sobre no tener los permisos suficientes para acceder.(Mozilla, s.f.)</dd>
+                    <dt><strong>8. ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</strong></dt>
+                    <dd>Sí, ya que se trata de un error dentro del servidor. (Mozilla, s.f.)</dd>
+                    <dt><strong>9. ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</strong></dt>
+                    <dd>Significa que un atributo está obsoleto por otros más actuales, sin embargo, no implica que no se puedan usar, ya que HTML tiene la característica de tener una compatibilidad con las versiones anteriores. (W3C Superseded Recommendation, s.f.)</dd>
+                    <dt><strong>10. ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</strong></dt>
+                    <dd>Una de las principales diferencias entre HTML 4 y HTML 5, es que en su versión anterior no suportaba archivos multimedia, mientras que en el más actual sí lo permite. Además, en su versión nueva, proporciona los elementos semánticos que proporcionan estructura a la página como nav, header, footer, entre otros. (GeeksforGeeks, 2021)</dd>
+                    <dt><strong>11. ¿Qué componentes de estructura y estilo tiene una tabla?</strong></dt>
+                    <dd>La estructura de las tablas tiene celdas representadas con la etiqueta td, filas representadas con la etiqueta tr y títulos de celdas representadas con la etiquta th. También es posible agrupar la tabla en diferentes partes utilizando las etiquetas thead, tbody y tfoot. En cuanto a la parte de estilos, las tablas tienen etiquetas como caption, colgroup y col. (W3Schools, s.f.)</dd>
+                    <dt><strong>12. ¿Cuáles son los principales controles de una forma HTML5?</strong></dt>
+                    <dd>Los principales controles de forma son los siguientes:
+                    <br>
+                    -Input<br>
+                    -Label<br>
+                    -Select<br>
+                    -Textarea<br>
+                    -Button<br>
+                    -Fieldset<br>
+                    -Legend<br>
+                    -DataList<br>                        -Output<br>
+                    -Option<br>
+                    -Optgroup<br>
+                    <br>
+                    (W3Schools, s.f.)</dd>
+                    <dt><strong>13. ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</strong></dt>
+                    <dd><img src="SoporteHTML5.PNG" alt="Imagen de soporte HML5">
+                    <br>
+                    De acuerdo con la página mi navegador Opera 83.0 tiene una puntuación de 526/555 de soporte para HTML5</dd>
+                    <dt><strong>14. ¿Cuál es el ciclo de vida de los sistemas de información?</strong></dt>
+                    <dd>
+                        1.- Planificación: encontrar el alcance del problema y determinar las diferentes soluciones al igual que los recursos, costos, tiempo, beneficios, entre otros<br>
+                        2.- Análisis del sistema y requisitos: considerar los requisitos funcionales del proyecto o de la solución. También analiza las necesidades de los usuarios para cumplir con sus expectativas<br>
+                        3.- Diseño del sistema: describe detalladamente las especificaciones necesarias, características y operaciones que deberá de satisfacer el sistema propuesto.<br>
+                        4.- Desarrollo: inicia la producción.<br>
+                        5.- Integración y testing: implica la integración del sistema y el testeo de sus programas y procedimientos. Es normalmente llevado a cabo por un Quality Assurance profesional para determinar si se lograron los objetivos propuestos en el inicio del proyecto<br>
+                        6.- Implementación: fase en donde el programa comienza a ser usado  y se transfieren los datos y componentes del sistema viejo al nuevo.<br>
+                        7.- Operaciones y mantenimiento: los usuarios afinan el sistema para mejorar el rendimiento, agregar nuevas herramientas o proponer nuevos requisitos.<br>
+                        <br>
+                    (Innovative Architects, s.f.)</dd>
+                    <dt><strong>15. ¿Cuál es el ciclo de desarrollo de sistemas de información?</strong></dt>
+                    <dd>Está dentro del ciclo de vida de los sistemas de información y es donde comienza a escribirse el código y a contruir la aplicación con base en los diseños y especificaciones escritas en las fases anteriores. (Mark, P., 2020)</dd>
+                </dl>
             </header>
             <article>
                 <header>
-                    <h1>Referencias</h1>
+                    <h2>Referencias</h2>
                 </header>
                 <ul>
-                    <li><p>BBC. (s.f.). World wide web vs internet – what’s the difference?. Recuperado de: <a href="https://www.bbc.co.uk/newsround/47523993" target="_blank">https://www.bbc.co.uk/newsround/47523993</a></p></li>
-                    <li><p>Brock, R.. (2019). Auth: Why HTTP POST?. Recuperado de: <a href="https://medium.com/@brockmrohloff_12324/auth-why-http-post-7c4da662cfa2" target="_blank">https://medium.com/@brockmrohloff_12324/auth-why-http-post-7c4da662cfa2</a></p></li>
-                    <li><p>GeeksforGeeks. (2021). Difference between HTML and HTML5. Recuperado de: <a href="https://www.geeksforgeeks.org/difference-between-html-and-html5/" target="_blank">https://www.geeksforgeeks.org/difference-between-html-and-html5/</a></p></li>
-                    <li><p>Goran, A.. (2019). An introduction to HTTP: everything you need to know. Recuperado de: <a href="https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/" target="_blank">https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/</a></p></li>
-                    <li><p>Innovative Architects. (s.f.). The Seven Phases of the System-Development Life Cycle. Recuperado de: <a href="https://www.innovativearchitects.com/KnowledgeCenter/basic-IT-systems/system-development-life-cycle.aspx" target="_blank">https://www.innovativearchitects.com/KnowledgeCenter/basic-IT-systems/system-development-life-cycle.aspx</a></p></li>
-                    <li><p>Maneesha, W.. (2017). What happens when you type a URL in the browser and press enter?. Recuperado de: <a href="https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a" target="_blank">https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a</a></p></li>
-                    <li><p>Mark, P.. (2020). System Development Life Cycle Guide. Recuperado de: <a href="https://www.clouddefense.ai/blog/system-development-life-cycle" target="_blank">https://www.clouddefense.ai/blog/system-development-life-cycle</a></p></li>
-                    <li><p>Mozilla. (s.f.). HTTP response status codes. Recuperado de: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</a></p></li>
-                    <li><p>W3C Superseded Recommendation. (s.f.). 4 Conformance: requirements and recommendations. Recuperado de: <a href="https://www.w3.org/TR/html401/conform.html#:~:text=A%20deprecated%20element%20or%20attribute,been%20outdated%20by%20newer%20constructs.&text=Deprecated%20elements%20may%20become%20obsolete,for%20reasons%20of%20backward%20compatibility." target="_blank">https://www.w3.org/TR/html401/conform.html#:~:text=A%20deprecated%20element%20or%20attribute,been%20outdated%20by%20newer%20constructs.&text=Deprecated%20elements%20may%20become%20obsolete,for%20reasons%20of%20backward%20compatibility.</a></p></li>
-                    <li><p>W3Schools. (s.f.) HTML Form Elements. Recuperado de: <a href="https://www.w3schools.com/html/html_form_elements.asp" target="_blank">https://www.w3schools.com/html/html_form_elements.asp</a></p></li>
-                    <li><p>W3Schools. (s.f.) HTML Tables. Recuperado de: <a href="https://www.w3schools.com/html/html_tables.asp" target="_blank">https://www.w3schools.com/html/html_tables.asp</a></p></li>
-
-
+                    <li>BBC. (s.f.). World wide web vs internet – what’s the difference?. Recuperado de: <a href="https://www.bbc.co.uk/newsround/47523993" target="_blank">https://www.bbc.co.uk/newsround/47523993</a></li>
+                    <li>Brock, R.. (2019). Auth: Why HTTP POST?. Recuperado de: <a href="https://medium.com/@brockmrohloff_12324/auth-why-http-post-7c4da662cfa2" target="_blank">https://medium.com/@brockmrohloff_12324/auth-why-http-post-7c4da662cfa2</a></li>
+                    <li>GeeksforGeeks. (2021). Difference between HTML and HTML5. Recuperado de: <a href="https://www.geeksforgeeks.org/difference-between-html-and-html5/" target="_blank">https://www.geeksforgeeks.org/difference-between-html-and-html5/</a></li>
+                    <li>Goran, A.. (2019). An introduction to HTTP: everything you need to know. Recuperado de: <a href="https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/" target="_blank">https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/</a></li>
+                    <li>Innovative Architects. (s.f.). The Seven Phases of the System-Development Life Cycle. Recuperado de: <a href="https://www.innovativearchitects.com/KnowledgeCenter/basic-IT-systems/system-development-life-cycle.aspx" target="_blank">https://www.innovativearchitects.com/KnowledgeCenter/basic-IT-systems/system-development-life-cycle.aspx</a></li>
+                    <li>Maneesha, W.. (2017). What happens when you type a URL in the browser and press enter?. Recuperado de: <a href="https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a" target="_blank">https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a</a></li>
+                    <li>Mark, P.. (2020). System Development Life Cycle Guide. Recuperado de: <a href="https://www.clouddefense.ai/blog/system-development-life-cycle" target="_blank">https://www.clouddefense.ai/blog/system-development-life-cycle</a></li>
+                    <li>Mozilla. (s.f.). HTTP response status codes. Recuperado de: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</a></li>
+                    <li><p>W3C Superseded Recommendation. (s.f.). 4 Conformance: requirements and recommendations. Recuperado de: <a href="https://www.w3.org/TR/html401/conform.html#:~:text=A%20deprecated%20element%20or%20attribute,been%20outdated%20by%20newer%20constructs.&text=Deprecated%20elements%20may%20become%20obsolete,for%20reasons%20of%20backward%20compatibility." target="_blank">https://www.w3.org/TR/html401/conform.html#:~:text=A%20deprecated%20element%20or%20attribute,been%20outdated%20by%20newer%20constructs.&text=Deprecated%20elements%20may%20become%20obsolete,for%20reasons%20of%20backward%20compatibility.</a></li>
+                    <li>W3Schools. (s.f.) HTML Form Elements. Recuperado de: <a href="https://www.w3schools.com/html/html_form_elements.asp" target="_blank">https://www.w3schools.com/html/html_form_elements.asp</a></li>
+                    <li>W3Schools. (s.f.) HTML Tables. Recuperado de: <a href="https://www.w3schools.com/html/html_tables.asp" target="_blank">https://www.w3schools.com/html/html_tables.asp</a></li>
                 </ul>
             </article>
             <footer>
-                <small><p>Laboratorio 1: Introducción a las aplicaiones web, HTML5 y ciclo de vida de los sistemas de información | Editor utilizado: Visual Studio Code | Página del editor: <a href="https://code.visualstudio.com" target="_blank">https://code.visualstudio.com</a></p></small>
+                <small>Laboratorio 1: Introducción a las aplicaiones web, HTML5 y ciclo de vida de los sistemas de información | Editor utilizado: Visual Studio Code | Página del editor: <a href="https://code.visualstudio.com" target="_blank">https://code.visualstudio.com</a></small>
             </footer>
         </article>    
     </body>
