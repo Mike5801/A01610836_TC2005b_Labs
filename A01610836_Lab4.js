@@ -47,11 +47,11 @@ function contador(numArray){
 document.write("Casos de prueba funcion contador:");
 document.write("<br> Arreglos: <br>");
 
-arr1 = [-5,-4,-3,-2,-1,0,1,2,3,4,5];
-arr2 = [0,0,0,0,0,0,0,0];
-arr3 = [-1,-2,-3,-4,-5,-6,-7,-8];
-arr4 = [1,0,2,0,3,0,4,0,5,0,6,0];
-arr5 = [1,-1,2,-2,3,-3,4,-4,5,-5];
+let arr1 = [-5,-4,-3,-2,-1,0,1,2,3,4,5];
+let arr2 = [0,0,0,0,0,0,0,0];
+let arr3 = [-1,-2,-3,-4,-5,-6,-7,-8];
+let arr4 = [1,0,2,0,3,0,4,0,5,0,6,0];
+let arr5 = [1,-1,2,-2,3,-3,4,-4,5,-5];
 
 document.write(arr1 + "<br>");
 document.write(contador(arr1) + "<br>");
@@ -64,20 +64,58 @@ document.write(contador(arr4) + "<br>");
 document.write(arr5 + "<br>");
 document.write(contador(arr5) + "<br>");
 
-document.write("<br>");
-document.write("<br Problema 4: <br>");
 
+//Problema 4:
+document.write("<br>");
+document.write("<br> Problema 4: <br>");
 
 function promedios (numMatrix){
-    for (let i = 0; i < numMatrix; i++){
-        for (let j = 0; j < num())
+    let sumTot = 0;
+    let prom = 0;
+    let arrProm = [];
+    arrProm.length = numMatrix.length;
+    for (let i = 0; i < numMatrix.length; i++){
+        for (let j = 0; j < numMatrix[i].length; j++){
+            sumTot = sumTot + numMatrix[i][j];
+        }
+        prom = sumTot / numMatrix[i].length;
+        arrProm[i] = prom;
+        sumTot = 0;
     }
+    return arrProm;
 }
 
+document.write("Casos de prueba funcion contador:");
+document.write("<br> Arreglos: <br>");
+
+let arr6 = [[1,2,3],[4,5,6],[7,8,9]];
+let arr7 = [[1],[1],[1],[1],[1],[1],[1]];
+let arr8 = [[0],[0],[0],[0],[0],[0],];
+let arr9 = [[1,3],[2,4],[3,5],[4,6],[5,7],[6,8],[7,9]];
+let arr10 = [[1],[0],[1],[1,3],[1],[0],[1],[7,9],[1,2,3,4,5,6,7,8,9]];
 
 
 
-
+document.write(arr6 + "<br>");
+console.log(arr6);
+document.write("Promedio por renglón: " + promedios(arr6) + "<br>");
+document.write("<br>");
+document.write(arr7 + "<br>");
+console.log(arr7);
+document.write("Promedio por renglón: " + promedios(arr7) + "<br>");
+document.write("<br>");
+document.write(arr8 + "<br>");
+console.log(arr8);
+document.write("Promedio por renglón: " + promedios(arr8) + "<br>");
+document.write("<br>");
+document.write(arr9 + "<br>");
+console.log(arr9);
+document.write("Promedio por renglón: " + promedios(arr9) + "<br>");
+document.write("<br>");
+document.write(arr10 + "<br>");
+console.log(arr10);
+document.write("Promedio por renglón: " + promedios(arr10) + "<br>");
+document.write("<br>");
 
 
 
