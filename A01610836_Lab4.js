@@ -84,29 +84,34 @@ function promedios (numMatrix){
     return arrProm;
 }
 
+function imprimirMatriz (numMatrix){
+    for (let i = 0; i < numMatrix.length; i++){
+        for (let j = 0; j < numMatrix[i].length; j++){
+            document.write(numMatrix[i][j] + " ");
+        }
+        document.write("<br>");
+    }
+}
+
 document.write("Casos de prueba funcion contador:");
-document.write("<br> Arreglos: <br>");
+document.write("<br> Matrices: <br><br>");
 
 let arr6 = [[1,2,3],[4,5,6],[7,8,9]];
-let arr7 = [[1],[1],[1],[1],[1],[1],[1]];
+let arr7 = [[1,1,1,1],[1,1,1],[1,1],[1],[1,1],[1,1,1],[1,1,1,1]];
 let arr8 = [[0],[0],[0],[0],[0],[0],];
 let arr9 = [[1,3],[2,4],[3,5],[4,6],[5,7],[6,8],[7,9]];
-let arr10 = [[1],[0],[1],[1,3],[1],[0],[1],[7,9],[1,2,3,4,5,6,7,8,9]];
+let arr10 = [[1,3,5],[0],[1,4,7,2],[1,3],[1,4,5,2,7,4,2],[0],[1,7,4,2,4],[7,9],[1,2,3,4,5,6,7,8,9]];
 
-document.write(arr6 + "<br>");
-console.log(arr6);
+//document.write(arr6 + "<br>");
+imprimirMatriz(arr6);
 document.write("Promedio por renglón: " + promedios(arr6) + "<br><br>");
-document.write(arr7 + "<br>");
-console.log(arr7);
+imprimirMatriz(arr7);
 document.write("Promedio por renglón: " + promedios(arr7) + "<br><br>");
-document.write(arr8 + "<br>");
-console.log(arr8);
+imprimirMatriz(arr8);
 document.write("Promedio por renglón: " + promedios(arr8) + "<br><br>");
-document.write(arr9 + "<br>");
-console.log(arr9);
+imprimirMatriz(arr9);
 document.write("Promedio por renglón: " + promedios(arr9) + "<br><br>");
-document.write(arr10 + "<br>");
-console.log(arr10);
+imprimirMatriz(arr10);
 document.write("Promedio por renglón: " + promedios(arr10) + "<br><br>");
 
 //Problema 5:
@@ -117,7 +122,6 @@ function inverso(num){
     let strAux = str.split('').reverse().join('');
     let numAux = parseFloat(strAux);
     numAux = numAux * Math.sign(num);
-    
     return numAux;
 }
 
@@ -140,4 +144,3 @@ document.write(num6 + "<br>");
 document.write("Inverso del numero: " + inverso(num6) + "<br><br>");
 document.write(num7 + "<br>");
 document.write("Inverso del numero: " + inverso(num7) + "<br><br>");
-
