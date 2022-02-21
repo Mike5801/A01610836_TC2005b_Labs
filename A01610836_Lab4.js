@@ -1,12 +1,12 @@
 //Problema 1:
 const num = prompt("Escribe un número entero: ");
-document.write("Problema 1: <br>");
+document.write("<strong>Problema 1: <br></strong>");
 for (let i = 1; i <= num; i++){
     document.write(i + " | " + i*i + " | " + i*i*i + "<br>");
 }
 
 //Problema 2:
-document.write("<br> Problema 2: <br>");
+document.write("<br> <strong>Problema 2: <br></strong>");
 let initialTime, finalTime;
 initialTime = new Date();
 const sumAns = prompt("Escribe el resultado de la suma: ");
@@ -26,7 +26,7 @@ document.write("<br> Tiempo tardado en dar respuesta: " + diffTime + " segundos"
 
 //Problema 3: 
 document.write("<br>");
-document.write("<br> Problema 3: <br>");
+document.write("<br> <strong>Problema 3: </strong><br>");
 
 function contador(numArray){
     let negative = 0;
@@ -66,8 +66,7 @@ document.write(contador(arr5) + "<br>");
 
 
 //Problema 4:
-document.write("<br>");
-document.write("<br> Problema 4: <br>");
+document.write("<strong>Problema 4: </strong><br>");
 
 function promedios (numMatrix){
     let sumTot = 0;
@@ -94,35 +93,51 @@ let arr8 = [[0],[0],[0],[0],[0],[0],];
 let arr9 = [[1,3],[2,4],[3,5],[4,6],[5,7],[6,8],[7,9]];
 let arr10 = [[1],[0],[1],[1,3],[1],[0],[1],[7,9],[1,2,3,4,5,6,7,8,9]];
 
-
-
 document.write(arr6 + "<br>");
 console.log(arr6);
-document.write("Promedio por renglón: " + promedios(arr6) + "<br>");
-document.write("<br>");
+document.write("Promedio por renglón: " + promedios(arr6) + "<br><br>");
 document.write(arr7 + "<br>");
 console.log(arr7);
-document.write("Promedio por renglón: " + promedios(arr7) + "<br>");
-document.write("<br>");
+document.write("Promedio por renglón: " + promedios(arr7) + "<br><br>");
 document.write(arr8 + "<br>");
 console.log(arr8);
-document.write("Promedio por renglón: " + promedios(arr8) + "<br>");
-document.write("<br>");
+document.write("Promedio por renglón: " + promedios(arr8) + "<br><br>");
 document.write(arr9 + "<br>");
 console.log(arr9);
-document.write("Promedio por renglón: " + promedios(arr9) + "<br>");
-document.write("<br>");
+document.write("Promedio por renglón: " + promedios(arr9) + "<br><br>");
 document.write(arr10 + "<br>");
 console.log(arr10);
-document.write("Promedio por renglón: " + promedios(arr10) + "<br>");
-document.write("<br>");
+document.write("Promedio por renglón: " + promedios(arr10) + "<br><br>");
 
+//Problema 5:
+document.write("<strong>Problema 5: </strong><br>");
 
+function inverso(num){
+    let str = num.toString();
+    let strAux = str.split('').reverse().join('');
+    let numAux = parseFloat(strAux);
+    numAux = numAux * Math.sign(num);
+    
+    return numAux;
+}
 
+document.write("Casos de prueba: <br>");
+document.write("Numeros: <br>");
 
+let num3 = -15;
+let num4 = -25;
+let num5 = 32;
+let num6 = 123456789;
+let num7 = -951700;
 
-
-
-
-
+document.write(num3 + "<br>");
+document.write("Inverso del numero: " + inverso(num3) + "<br><br>");
+document.write(num4 + "<br>");
+document.write("Inverso del numero: " + inverso(num4) + "<br><br>");
+document.write(num5 + "<br>");
+document.write("Inverso del numero: " + inverso(num5) + "<br><br>");
+document.write(num6 + "<br>");
+document.write("Inverso del numero: " + inverso(num6) + "<br><br>");
+document.write(num7 + "<br>");
+document.write("Inverso del numero: " + inverso(num7) + "<br><br>");
 
