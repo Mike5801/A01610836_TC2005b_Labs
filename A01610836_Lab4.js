@@ -14,7 +14,7 @@ let num1, num2;
 num1 = Math.floor(Math.random()*11);
 num2 = Math.floor(Math.random()*11);
 console.log(num1 + num2);
-if (sumAns == (num1 + num2)){
+if (sumAns == (num1 + num2)) {
     document.write("El resultado fue correcto");
 } else {
     document.write("El resultado fue incorrecto");
@@ -28,16 +28,16 @@ document.write("<br> Tiempo tardado en dar respuesta: " + diffTime + " segundos"
 document.write("<br>");
 document.write("<br> <strong>Problema 3: </strong><br>");
 
-function contador(numArray){
+function contador(numArray) {
     let negative = 0;
     let zeroes = 0;
     let positive = 0;
-    for (let i = 0; i < numArray.length; i++){
-        if (numArray[i] < 0){
+    for (let i = 0; i < numArray.length; i++) {
+        if (numArray[i] < 0) {
             negative = negative + 1;
-        } else if (numArray[i] == 0){
+        } else if (numArray[i] == 0) {
             zeroes = zeroes + 1;
-        } else{
+        } else {
             positive = positive + 1;
         }
     }
@@ -68,13 +68,13 @@ document.write(contador(arr5) + "<br>");
 //Problema 4:
 document.write("<strong>Problema 4: </strong><br>");
 
-function promedios (numMatrix){
+function promedios (numMatrix) {
     let sumTot = 0;
     let prom = 0;
     let arrProm = [];
     arrProm.length = numMatrix.length;
-    for (let i = 0; i < numMatrix.length; i++){
-        for (let j = 0; j < numMatrix[i].length; j++){
+    for (let i = 0; i < numMatrix.length; i++) {
+        for (let j = 0; j < numMatrix[i].length; j++) {
             sumTot = sumTot + numMatrix[i][j];
         }
         prom = sumTot / numMatrix[i].length;
@@ -84,9 +84,9 @@ function promedios (numMatrix){
     return arrProm;
 }
 
-function imprimirMatriz (numMatrix){
-    for (let i = 0; i < numMatrix.length; i++){
-        for (let j = 0; j < numMatrix[i].length; j++){
+function imprimirMatriz (numMatrix) {
+    for (let i = 0; i < numMatrix.length; i++) {
+        for (let j = 0; j < numMatrix[i].length; j++) {
             document.write(numMatrix[i][j] + " ");
         }
         document.write("<br>");
