@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Laboratorio 5: Framework Bulma
+      </h1>
+      <p class="subtitle">
+        <strong>Datos de contacto: </strong>Miguel Weiping Tang Feng | A01610836 | A01610836@tec.mx
+      </p>
+    </div>
+    <br>
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon is-small">
+                <i class="fas fa-home" aria-hidden="true"></i>
+              </span>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon is-small">
+                <i class="fas fa-book" aria-hidden="true"></i>
+              </span>
+              <span>Breadcrumb</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon is-small">
+                <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+              </span>
+              <span>Bulma</span>
+            </a>
+          </li>
+          <li class="is-active">
+            <a href="#">
+              <span class="icon is-small">
+                <i class="fas fa-thumbs-up" aria-hidden="true"></i>
+              </span>
+              <span>A01610836</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="container">
+        <h4 class="title is-4">
+          Hoverable Dropdown
+        </h1>
+      </div>
+      <div class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+            <span>Poner el cursor aquí</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+          <div class="dropdown-content">
+            <div class="dropdown-item">
+                <a href="#" class="dropdown-item">
+                    Elemento 1
+                  </a>
+                  <a class="dropdown-item">
+                    Elemento 2
+                  </a>
+                  <a href="#" class="dropdown-item">
+                    Elemento 3
+                  </a>
+                  <a href="#" class="dropdown-item">
+                    Elemento 4
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a href="#" class="dropdown-item">
+                    Otros
+                  </a>
+            </div>
+          </div>
+        </div> 
+      </div>
+      
+      <div class="container">
+        <h4 class="title is-4">
+            <br>Barra de progreso
+        </h1>
+      </div>
+      <progress class="progress is-primary" value="75" max="100">15%</progress>
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Carta Bulma
+          </p>
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            Miguel Weiping Tang Feng A01610836
+            <a href="#">@A01610836</a>. <a href="#">#TC2006B</a> <a href="#">#Laboratorio 5</a>
+            <br>
+            <time datetime="2016-1-1">Hecho en semana 2</time>
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">Save</a>
+          <a href="#" class="card-footer-item">Edit</a>
+          <a href="#" class="card-footer-item">Delete</a>
+        </footer>
+      </div>
+      <article class="message is-primary">
+        <div class="message-header">
+          <p>Pregunta Laboratorio 5 </p>
+          <button class="delete" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+         <strong>Describe material design:</strong>
+         <br><p>
+            Material Design es un lenguaje de diseño orientado a Android que promueve la experiencia táctil de pantalla a través de señales y movimientos naturales que simulan objetos del mundo real. (Interaction Design Foundation, s.f.)
+         </p>
+        </div>
+      </article>
+      <table class="table is-hoverable">
+          <thead>
+              <tr>
+                  <th></th>
+                  <th>Referencias</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td></td>
+                  <td>Interaction Design Foundation. (s.f.). Materiaal Design. Recuperado de: <a href="https://www.interaction-design.org/literature/topics/material-design">https://www.interaction-design.org/literature/topics/material-design</a></td>
+              </tr>
+          </tbody>
+      </table>
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Laboratorio 5</strong> hecho por Miguel Weiping Tang Feng</a>. Uso del framework de 
+            <a href="https://bulma.io" target="_blank">Bulma</a>.
+          </p>
+        </div>
+      </footer>
+  </section>
+  </body>
+</html>
