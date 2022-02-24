@@ -11,6 +11,11 @@ function verificarPassword(contrasenia) {
     let casosVerificacion = "";
     let flag = true;
 
+    if (passwordString.length == 0) {
+        alert("El campo de verificar la contraseña está vacío");
+        return casosVerificacion = "";
+    }
+
     if (passwordString.length < 8){
         casosVerificacion += "-La contraseña tiene menos de 8 caracteres <br>";
         flag = false;
@@ -40,6 +45,19 @@ function verificarPassword(contrasenia) {
 
 boton_verificar.onclick = () => {
     let boton_verificar = document.getElementById("verificacion");
+
     boton_verificar.innerHTML = verificarPassword(input_password.value);
     
+}
+
+validar_passwords.onmouseover = () => {
+    let boton_verificar = document.getElementById("boton_verificar");
+
+    boton_verificar.innerHTML = '<p class="p1"> Verificar contraseña </p>';
+}
+
+validar_passwords.onmouseout = () => {
+    let boton_verificar = document.getElementById("boton_verificar");
+
+    boton_verificar.innerHTML = "Verificar contraseña";
 }
