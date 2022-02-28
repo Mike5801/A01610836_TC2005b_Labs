@@ -30,12 +30,86 @@
                 </tr>
             </table>
         </article>
+    </section>
+    <section>
         <article>
             <header>
                 <h2 class="subtitle is-3">Vender productos</h2>
             </header>
-            
+            <br>
+            <table class="table is-hoverable is-narrow is-bordered">
+                <tr>
+                    <th>Productos:</th>
+                    <th>Logitech PRO X SUPERLIGHT Blanco</th>
+                    <th>Razer Viper mini</th>
+                    <th>HyperX Alloy Origins Core</th>
+                </tr>
+                <tr>
+                    <th>Imagen del Producto: </th>
+                    <td>
+                        <figure class="is-4by3">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/61ykKLbddNL._AC_UL116_SR116,116_.jpg"
+                                alt="Mouse gaming inalámbrico PRO X SUPERLIGHT Blanco">
+                        </figure>
+                    </td>
+                    <td>
+                        <figure class="is-4by3">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/516NCsvHpmL._AC_UL116_SR116,116_.jpg"
+                                alt="Mouse Razer Viper mini">
+                        </figure>
+                    </td>
+                    <td>
+                        <figure class="is-4by3">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/71cQYybJC7L._AC_UL116_SR116,116_.jpg"
+                                alt="Teclado HyperX Alloy Origins Core">
+                        </figure>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Precio:</th>
+                    <td><span id="precio_producto1"></span></td>
+                    <td><span id="precio_producto2"></span></td>
+                    <td><span id="precio_producto3"></span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <label for="producto1">Cantidad: </label>
+                        <input class="input" type="number" name="producto1" id="cantidad_producto1" min="0" max="1000" placeholder="1">
+                        <br><br>
+                        <div class="buttons has-addons is-centered">
+                            <button class="button is-info" id="boton_agregarCarrito1">Agregar al carrito</button>
+                        </div>
+                    </td>
+                    <td>
+                        <label for="producto2">Cantidad: </label>
+                        <input class="input" type="number" name="producto2" id="cantidad_producto2" min="0" max="1000" placeholder="1">
+                        <br><br>
+                        <div class="buttons has-addons is-centered">
+                            <button class="button is-info" id="boton_agregarCarrito2">Agregar al carrito</button>
+                        </div>
+                    </td>
+                    <td>
+                        <label for="producto3">Cantidad: </label>
+                        <input class="input" type="number" name="producto3" id="cantidad_producto3" min="0" max="1000" placeholder="1">
+                        <br><br>
+                        <div class="buttons has-addons is-centered">
+                            <button class="button is-info" id="boton_agregarCarrito3">Agregar al carrito</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <header>
+                <h2 class="subtitle is-4"><strong>Precio a pagar: </strong></h2>
+            </header>
+            <p>IVA: <span id="iva"></span></p>
+            <p>Costo total: <span id="total_pagar"></span></p>
+
+            <button class="button is-primary" id="boton_reset">Resetear carrito</button>
         </article>
     </section>
+    <script src="A01610836_Lab6_PaginaVenderProductos.js"></script>
 </body>
+
 </html>
