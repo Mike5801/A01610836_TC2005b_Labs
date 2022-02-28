@@ -64,3 +64,21 @@ boton_reset.onclick = () => {
     document.getElementById("iva").innerHTML = totalIva;
     document.getElementById("total_pagar").innerHTML = totalPrecio;
 }
+
+boton_compra.onclick = () => {
+    if (totalPrecio > 0 && totalIva > 0) {
+        alert("Tu compra de $" + totalPrecio + " con un IVA de $" + totalIva + " ha sido exitosa");
+    } else {
+        alert("No haz seleccionado ningún producto");
+    }
+}
+
+ventana_ayuda.onmouseover = () => {
+    let ayuda = document.getElementById("ayuda");
+    ayuda.innerHTML = "Cantidad mínima: 1 <br> Cantidad máxima: 100";
+}
+
+ventana_ayuda.onmouseout = () => {
+    let ayuda = document.getElementById("ayuda");
+    ayuda.innerHTML = "";
+}

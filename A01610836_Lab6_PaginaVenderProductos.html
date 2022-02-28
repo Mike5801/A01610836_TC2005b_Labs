@@ -73,10 +73,13 @@
                     <td><span id="precio_producto3"></span></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td>
+                        <span id="ventana_ayuda">Ayuda (?)</span>
+                        <div id="ayuda"></div>
+                    </td>
                     <td>
                         <label for="producto1">Cantidad: </label>
-                        <input class="input" type="number" name="producto1" id="cantidad_producto1" min="0" max="1000" placeholder="1">
+                        <input class="input" type="number" name="producto1" id="cantidad_producto1" min="1" max="100" placeholder="1">
                         <br><br>
                         <div class="buttons has-addons is-centered">
                             <button class="button is-info" id="boton_agregarCarrito1">Agregar al carrito</button>
@@ -84,7 +87,7 @@
                     </td>
                     <td>
                         <label for="producto2">Cantidad: </label>
-                        <input class="input" type="number" name="producto2" id="cantidad_producto2" min="0" max="1000" placeholder="1">
+                        <input class="input" type="number" name="producto2" id="cantidad_producto2" min="1" max="100" placeholder="1">
                         <br><br>
                         <div class="buttons has-addons is-centered">
                             <button class="button is-info" id="boton_agregarCarrito2">Agregar al carrito</button>
@@ -92,7 +95,7 @@
                     </td>
                     <td>
                         <label for="producto3">Cantidad: </label>
-                        <input class="input" type="number" name="producto3" id="cantidad_producto3" min="0" max="1000" placeholder="1">
+                        <input class="input" type="number" name="producto3" id="cantidad_producto3" min="1" max="100" placeholder="1">
                         <br><br>
                         <div class="buttons has-addons is-centered">
                             <button class="button is-info" id="boton_agregarCarrito3">Agregar al carrito</button>
@@ -103,10 +106,15 @@
             <header>
                 <h2 class="subtitle is-4"><strong>Precio a pagar: </strong></h2>
             </header>
-            <p>IVA: <span id="iva"></span></p>
-            <p>Costo total: <span id="total_pagar"></span></p>
+            <p>IVA: <span id="iva">0</span></p>
+            <p>Costo total: <span id="total_pagar">0</span></p>
+            <div class="buttons has-addons is-left">
+                <button class="button is-warning" id="boton_compra">Comprar artículos</button>
+                <button class="button is-primary" id="boton_reset">Resetear carrito</button>
+            </div>
+            
 
-            <button class="button is-primary" id="boton_reset">Resetear carrito</button>
+            
         </article>
     </section>
     <script src="A01610836_Lab6_PaginaVenderProductos.js"></script>
