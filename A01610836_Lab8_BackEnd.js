@@ -96,4 +96,14 @@ for (let i = 0; i < t; i++){
 stringArray.join("");
 console.log(stringArray);
 
+//Aplicación web para enviar petición al sergvidor y devolver página creada anteriormente
 
+const http = require ('http');
+
+const server = http.createServer( (request, response) => {
+    response.setHeader('Content-Type', 'text/html');
+    response.write(filesystem.readFileSync('A01610836_Lab1.html'));
+    response.end();
+});
+
+server.listen(4000);
