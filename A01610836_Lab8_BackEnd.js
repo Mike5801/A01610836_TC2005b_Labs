@@ -43,21 +43,57 @@ The next line contains string s, which represents the schoolchildren's initial a
 
 Output
 Print string a, which describes the arrangement after t seconds. If the i-th position has a boy after the needed time, then the i-th character a must equal "B", otherwise it must equal "G".
+
+input
+5 1
+BGGBG
+
+output
+GBGGB
+
+input
+5 2
+BGGBG
+
+output
+GGBGB
+
+input
+4 1
+GGGB
+
+output
+GGGB
+
 */
 
-let n = console.promt("input n:");
-let t = console.promt("input t:");
+let n = 5
+let t = 1
 
-let string = console.prompt("string of B and G:");
+let queue = "GGGB";
 
-let stringArray = string.split('');
+let stringArray = queue.split('');
+let queueArray = stringArray.slice();
 
-for (let i = 0; i < stringArray.length; i++){
-    if (stringArray[i] == 'G'){
+console.log(queueArray);
+
+for (let i = 0; i < t; i++){
+    for (let j = 0; j < stringArray.length; j++) {
+        if (stringArray[j] == "B") {
+            if (j + 1 < stringArray.length){
+                if (stringArray[j + 1] == "G"){
+                    let aux1 = stringArray[j + 1];
+                    let aux2 = stringArray[j];
+                    queueArray[j] = aux1;
+                    queueArray[j + 1] = aux2;
+                }
+            }
+        }
     }
-    if (stringArray[i] == 'B'){
-        stringArray[i] = 'G';
-    }
+    stringArray = queueArray.slice();
 }
+
+stringArray.join("");
+console.log(stringArray);
 
 
