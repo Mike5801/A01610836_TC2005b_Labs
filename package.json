@@ -4,6 +4,7 @@
   "description": "",
   "main": "A01610836_Lab11.js",
   "scripts": {
+    "start": "nodemon A01610836_Lab11.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +22,9 @@
   "homepage": "https://github.com/Mike5801/A01610836_TC2005b_Labs#readme",
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3"
   }
 }
