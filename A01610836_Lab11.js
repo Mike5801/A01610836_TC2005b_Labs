@@ -7,16 +7,14 @@ app.use(bodyParser.urlencoded({extended: false}));
 const rutasModulo1 = require('./routes/rutas_modulo1');
 const rutasModulo2 = require('./routes/rutas_modulo2');
 const rutasModulo3 = require('./routes/rutas_modulo3');
+const rutasModulo4 = require('./routes/rutas_modulo4');
 const { request } = require('http');
 const { response } = require('express');
 
 app.use('/modulo1', rutasModulo1);
 app.use('/modulo2', rutasModulo2);
 app.use('/modulo3', rutasModulo3);
-
-
-let calificacionPiezasRomanticistas;
-calificacionPiezasRomanticistas = 0;
+app.use('/modulo4', rutasModulo4);
 
 //Middleware
 app.use((request, response, next) => {
@@ -30,6 +28,8 @@ app.use('/inicio', (request, response, next) => {
     respuesta += '<ul><li>modulo2/chopinNo1Op10</li><li>modulo2/chopinNo3Op10</li><li>modulo2/chopinNo4Op10</li></ul>';
     respuesta += '<br> Modulo 3: <br>';
     respuesta += '<ul><li>modulo3/piezasRomanticismo</li></ul>';
+    respuesta += '<br> Modulo 4: <br>';
+    respuesta += '<ul><li>modulo4</li></ul>';
     response.send(respuesta);
 });
 

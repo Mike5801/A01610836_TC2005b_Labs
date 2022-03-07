@@ -35,6 +35,4 @@ router.post('/piezasRomanticismo', (request, response, next) => {
     response.redirect('/modulo3');
 });
 
-
-
 module.exports = router;
