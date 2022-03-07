@@ -1,0 +1,25 @@
+{
+  "name": "a01610836_tc2005b_labs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "A01610836_Lab11.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mike5801/A01610836_TC2005b_Labs.git"
+  },
+  "keywords": [
+    "A01610836_Labs"
+  ],
+  "author": "Miguel Tang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mike5801/A01610836_TC2005b_Labs/issues"
+  },
+  "homepage": "https://github.com/Mike5801/A01610836_TC2005b_Labs#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
