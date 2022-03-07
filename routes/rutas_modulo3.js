@@ -1,6 +1,6 @@
 const express = require('express');
 
-const fileName = require('fs');
+const filesystem = require('fs');
 
 const router = express.Router();
 
@@ -30,6 +30,7 @@ router.post('/piezasRomanticismo', (request, response, next) => {
     console.log(request.body);
     calificacionPiezasRomanticistas = request.body.calif;
     console.log(calificacionPiezasRomanticistas);
+    filesystem.writeFileSync('CalificacionPiezasRomanticismo.txt',calificacionPiezasRomanticistas);
     response.status = 303;
     response.redirect('/modulo3');
 });
