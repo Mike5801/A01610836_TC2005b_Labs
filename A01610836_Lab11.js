@@ -6,33 +6,30 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 const rutasModulo1 = require('./routes/rutas_modulo1');
 const rutasModulo2 = require('./routes/rutas_modulo2');
+const rutasModulo3 = require('./routes/rutas_modulo3');
 const { request } = require('http');
 const { response } = require('express');
 
 app.use('/modulo1', rutasModulo1);
-//app.use('/modulo2', rutasModulo2);
+app.use('/modulo2', rutasModulo2);
+app.use('/modulo3', rutasModulo3);
+
+
+let calificacionPiezasRomanticistas;
+calificacionPiezasRomanticistas = 0;
 
 //Middleware
 app.use((request, response, next) => {
-    console.log('middleware');
     next();
 });
-
-app.use('/modulo1', (request, response, next) => {
-    console.log(request.body);
-    response.send('<h1>Estudios de chopin Op 25:</h1>');
-});
-/*
-app.use('/modulo2', (request, response, next) => {
-    console.log(request.body);
-    response.send('hola');
-})*/
 
 app.use('/inicio', (request, response, next) => {
     let respuesta = '<h1>Rutas Posibles</h1> <br> Modulo 1: <br>';
     respuesta += '<ul><li>modulo1/chopinNo5Op25</li><li>modulo1/chopinNo11Op25</li></ul>';
     respuesta += '<br> Modulo 2: <br>';
-    respuesta += ' <ul><li>modulo2/</li></ul>';
+    respuesta += '<ul><li>modulo2/chopinNo1Op10</li><li>modulo2/chopinNo3Op10</li><li>modulo2/chopinNo4Op10</li></ul>';
+    respuesta += '<br> Modulo 3: <br>';
+    respuesta += '<ul><li>modulo3/piezasRomanticismo</li></ul>';
     response.send(respuesta);
 });
 
