@@ -4,7 +4,7 @@
   "description": "",
   "main": "A01610836_Lab11.js",
   "scripts": {
-    "start": "nodemon A01610836_Lab11.js",
+    "start": "nodemon A01610836_Lab12.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "body-parser": "^1.19.2",
-    "express": "^4.17.3"
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "path": "^0.12.7"
   }
 }
