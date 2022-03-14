@@ -10,7 +10,7 @@ module.exports = class calificacion {
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
         calificacionPiezasRomanticistas = this;
-        console.log(calificacionPiezasRomanticistas);
+        //console.log(calificacionPiezasRomanticistas);
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.

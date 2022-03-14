@@ -1,4 +1,10 @@
 <%- include('includes/header.ejs') %>
     <h1>Piezas musicales en conjunto</h1>
     <br>Calificación de piezas del romanticismo: <%= calificacion.calificacion %>
+    <% if (ultima_calificacion != '') { %>
+        <br>La última calificación que metiste fue: <%= ultima_calificacion %>
+    <% } else { %>
+        <br>No hay última calificación
+    <% } %>
+    
 <%- include('includes/footer.ejs') %>
