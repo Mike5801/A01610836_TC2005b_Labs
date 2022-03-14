@@ -5,13 +5,17 @@ exports.tituloModulo3 = (request, response, next) => {
      //console.log(request.cookies);
     response.render('modulo3', {
         calificacion: calificacionPR.fetchAll(),
-        ultima_calificacion: request.get('Cookie').split('=')[1]
+        ultima_calificacion: request.get('Cookie').split('=')[1],
+        usuario: request.session.usuario
     });
 }
 
 exports.piezasRomanticismo = (request, response, next) => {
     console.log(request.body);
-    response.render('piezasRomanticismo');
+    response.render('piezasRomanticismo', {
+        nombre: 'Miguel',
+        usuario: request.session.usuario
+    });
 }
 
 exports.postCalif = (request, response, next) => {

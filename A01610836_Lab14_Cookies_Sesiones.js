@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 //const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
@@ -15,13 +16,21 @@ const rutasModulo1 = require('./routesLab13/rutas_modulo1');
 const rutasModulo2 = require('./routesLab13/rutas_modulo2');
 const rutasModulo3 = require('./routesLab13/rutas_modulo3');
 const rutasModulo4 = require('./routesLab13/rutas_modulo4');
+const rutas_usuarios = require('./routesLab13/auth.routes')
 const { request } = require('http');
 const { response } = require('express');
+
+app.use(session({
+    secret: 'asñldfjlñaksdjfoñksdajrioweuroiudasofhjasñofhjoeiwahfjadshfuñoewhafoñheadwfhñdsaohfoaewjhrñoaksdjfouegbñgjibnñvijnachasdñil', 
+    resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
+    saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
+}));
 
 app.use('/modulo1', rutasModulo1);
 app.use('/modulo2', rutasModulo2);
 app.use('/modulo3', rutasModulo3);
 app.use('/modulo4', rutasModulo4);
+app.use('/users', rutas_usuarios);
 //app.use(cookieParser());
 
 //Middleware
@@ -38,6 +47,8 @@ app.use('/inicio', (request, response, next) => {
     respuesta += '<ul><li>modulo3/piezasRomanticismo</li></ul>';
     respuesta += '<br> Modulo 4: <br>';
     respuesta += '<ul><li>modulo4</li><li>modulo4/lab1</li><li>modulo4/lab6</li></ul>';
+    respuesta += '<br> Modulo 5: <br>';
+    respuesta += '<ul><li>users/login</li><li>logout</li>';
     response.send(respuesta);
 });
 

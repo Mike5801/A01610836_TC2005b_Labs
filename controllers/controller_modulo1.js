@@ -5,10 +5,16 @@ exports.tituloModulo1 = (request, response, next) => {
 
 exports.op25_no5 = (request, response, next) => {
     console.log(request.body);
-    response.render('chopinop25no5');
+    response.render('chopinop25no5', {
+        nombre: 'Miguel',
+        usuario: request.session.usuario
+    });
 };
 
 exports.op25_no11 = (request, response, next) => {
     console.log(request.body);
-    response.render('chopinop25no11');
+    response.render('chopinop25no11', {
+        nombre: 'Miguel',
+        usuario: request.session.usuario
+    });
 };

@@ -2,7 +2,10 @@ const path = require('path');
 
 exports.tituloModulo4 = (request, response, next) => {
     console.log(request.body);
-    response.render('modulo4');
+    response.render('modulo4',{
+        nombre: 'Miguel',
+        usuario: request.session.usuario
+    });
 };
 
 exports.lab6 = (request, response, next) => {
