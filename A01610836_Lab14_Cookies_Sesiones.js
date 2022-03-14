@@ -4,6 +4,9 @@ const path = require('path');
 //const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
+const csrf = require('csurf');
+const csrfProtection = csrf();
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -35,6 +38,12 @@ app.use('/users', rutas_usuarios);
 
 //Middleware
 app.use((request, response, next) => {
+    next();
+});
+
+app.use(csrfProtection); 
+app.use((request, response, next) => {
+    response.locals.csrfToken = request.csrfToken();
     next();
 });
 
