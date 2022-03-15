@@ -17,10 +17,23 @@
     <p>El código queda mucho más limpio y se tiene solo una funcionalidad por cada archivo de código, es decir, no se encuentra estructura con lógica en un mismo archivo, permitiendo tener un código lasaña por capas y no un código spaghetti donde se tienen diferentes funcionalidades en un mismo archivo (vista, lógica y estructura en uno mismo)</p>
     <br><strong>¿Encuentras alguna desventaja en el estilo arquitectónico MVC?</strong><br>
     <p>Como todo está dividido en diferentes archivos, debugear el código y encontrar en dónde se encuentran los errores es un trabajo muy complicado, ya que no hace referencia directa a un mismo archivo. Lo mismo sucede en los casos donde se requiera actualiar algún módulo completo, en lugar de hacerlo en un solo archivo, se tendrían que buscar las secciones a cambiar en todos los diferentes módulos o carpetas</p>
-
+    <h1>Preguntas del laboratorio 18</h1>
+    <br><strong>¿Qué otras formas de autenticación existen?</strong><br>
+    <dl>
+        <dt>Two-factor authentication (2FA):</dt>
+        <dd>Requiere una contraseña y de poseer específicamente un objeto físico para tener acceso a la red</dd>
+        <dt>Token authentication</dt>
+        <dd>Utilizan un dispositivo físico que se encarga de la generación de un token para aplicar el 2FA</dd>
+        <dt>Biometric authenticaction:.</dt>
+        <dd>Requiere de un rasgo físico del usuario para poder identificarlos, pueden ser huellas, retina o iris del ojo, voz, cara, entre otros</dd>
+        <dt>Transaction authentication:</dt>
+        <dd>Compara las características digitales del usuario con lo que el sistema sabe de él y busca las discrepancias (Dirección ip de la ubicación diferente al usual))</dd>
+    </dl>
+    <p>(N-Able, 2019).</p>
     <footer>
         <h3>Referencias</h3>
         <ul>
+            <li>N-Able. (2019). Common Network Authentication Methods. Recuperado de: <a href="https://www.n-able.com/blog/network-authentication-methods" target="_blank">https://www.n-able.com/blog/network-authentication-methods</a></li>
             <li>Openbase. (s.f.). 10 Best Node.js HTML Templeating Engine Librarires. Recuperado de: <a href="https://openbase.com/categories/js/best-nodejs-html-templating-engine-libraries" target="_blank">https://openbase.com/categories/js/best-nodejs-html-templating-engine-libraries</a></li>
         </ul>
     </footer>
