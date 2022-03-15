@@ -25,7 +25,7 @@ exports.login =  (request, response, next) => {
                         request.session.user = user;
                         request.session.usuario = user.nombre;
                         return request.session.save(err => {
-                            response.redirect('/modulo3/');
+                            response.redirect('/inicio/');
                     });
                     }
                     response.redirect('/users/login');
