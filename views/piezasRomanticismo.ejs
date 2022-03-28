@@ -27,16 +27,16 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
-                    <h3>Chopin Etude Op10 No 4</h3>
+                    <h3>Chopin Etude Op 10 No 4</h3>
                     <iframe width="560" height="315"
                         src="https://www.youtube.com/embed/XIKdCTmcTLs" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
+                    <form action="/modulo3/piezasRomanticismo" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+                        <label for="calificacion"> ¿Cómo
+                        puntuarías del 1 al 10 el recital?</label><input type="number" name="calif" required
+                        min="1" max="10"><input type="submit" value="Enviar_calificacion">
+                    </form>
 <%- include('includes/footer.ejs') %>
-<form action="/modulo3/piezasRomanticismo" method="POST">
-    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
-    <label for="calificacion"> ¿Cómo
-    puntuarías del 1 al 10 el recital?</label><input type="number" name="calif" required
-    min="1" max="10"><input type="submit" value="Enviar_calificacion">
-</form>

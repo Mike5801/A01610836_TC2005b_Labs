@@ -1,0 +1,14 @@
+<%- include('includes/header.ejs') %>
+    <h1>Agregar nueva pieza musical</h1>
+    <form action="/modulo3/nuevaPieza" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+        <label for="nombre">Nombre: </label>
+        <input type="text" id="nombre" name="nombre" placeholder="Chopin Etude Op 25 No 5">
+        <label for="descripcion">Descripción: </label>
+        <input type="text" id="descripcion" name="descripcion" placeholder="Tocado por Pollini">
+        <label for="video">Video: </label>
+        <input type="text" id="video" name="video" placeholder="https://www.youtube.com/embed/NkdgFfKIWbA">
+        <input type="submit" value="Enviar">
+    </form>
+
+<%- include('includes/footer.ejs') %>

@@ -9,7 +9,13 @@ router.get('/', isAuth, controller_modulo3.tituloModulo3);
 
 router.get('/piezasRomanticismo/', isAuth, controller_modulo3.piezasRomanticismo);
 
+router.get('/piezasMusicales', isAuth, controller_modulo3.piezasMusicales);
+
+router.get('/nuevaPieza', isAuth, controller_modulo3.getPiezasM);
+
+router.post('/nuevaPieza', isAuth, controller_modulo3.postPiestasM);
 
 router.post('/piezasRomanticismo', isAuth, controller_modulo3.postCalif);
+
 
 module.exports = router;

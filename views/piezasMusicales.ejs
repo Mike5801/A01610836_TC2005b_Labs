@@ -1,0 +1,23 @@
+<%- include('includes/header.ejs') %>}
+    <h1>Lista de Piezas musicales</h1>
+    <% if (piezas.length > 0) { %>
+        <table>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Video</th>
+        <% for (let pieza of piezas) { %>
+            <tr>
+                <td> <%= pieza.nombre %></td>
+                <td> <%= pieza.descripcion %></td>
+                <td> <iframe  width="560" height="315"
+                    src="<%= pieza.video %>" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen ></iframe></td>
+            </tr>
+        <% } %>
+        </table>
+    <% } else { %>
+        <h3>No hay piezas musicales</h3>
+    <% } %>
+    <a href="/inicio">Regresar a inicio con menú de módulos</a>
+<%- include('includes/footer.ejs') %>

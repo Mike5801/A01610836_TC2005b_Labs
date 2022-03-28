@@ -1,4 +1,5 @@
 const calificacionPR = require('../models/calificacion')
+const piezasM = require('../models/piezasMusicales');
 
 exports.tituloModulo3 = (request, response, next) => {
     console.log(request.get('Cookie').split('=')[1]);
@@ -26,3 +27,35 @@ exports.postCalif = (request, response, next) => {
     response.redirect('/modulo3/');
 }
 
+exports.piezasMusicales = (request, response, next) => {
+    console.log(request.body);
+    piezasM.fetchAll().then(([piezasmusicales, fieldData]) => {
+        response.render('piezasMusicales', {
+            piezas: piezasmusicales,
+            usuario: request.session.usuario
+        });
+    }).catch((error) => {
+        console.log(error);
+    });
+}
+
+exports.getPiezasM = (request, response, next) => {
+    //console.log('GET /modulo3/ingresarPiezas');
+    response.render('ingresarPiezas', {
+        usuario: request.session.usuario
+    });
+}
+
+exports.postPiestasM = (request, response, next) => {
+    //console.log('POST /modulo3/ingresarPiezas');
+    console.log(request.body)
+    const pieza = new piezasM(request.body.nombre, request.body.descripcion, request.body.video);
+    pieza.save()
+    .then(() => {
+        request.session.info = pieza.nombre + ' fue registrado con éxito';
+        response.redirect('/modulo3/piezasMusicales/');
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+}
