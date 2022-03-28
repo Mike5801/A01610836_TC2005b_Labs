@@ -59,3 +59,19 @@ exports.postPiestasM = (request, response, next) => {
         console.log(error);
     });
 }
+
+exports.filtrar = (request, response, next) => {
+    console.log(request.params.pieza_id);
+    //console.log(request.get('Cookie').split('=')[1]);
+    piezasM.fetchOne(request.params.pieza_id)
+        .then(([piezasmusicales, fieldData]) => {
+            console.log(piezasmusicales);
+            response.render('piezasMusicales', {
+                piezas: piezasmusicales,
+                usuario: request.session.usuario
+            }); 
+        })
+        .catch(err => {
+            console.log(err);
+        }); 
+}

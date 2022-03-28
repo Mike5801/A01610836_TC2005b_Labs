@@ -11,7 +11,11 @@ module.exports = class piezasMusicales {
         return db.execute('INSERT INTO piezasmusicales(nombre, descripcion, video) VALUES (?,?,?)', [this.nombre, this.descripcion, this.video]);
     }
 
-    static fetchAll(){
+    static fetchAll() {
         return db.execute('SELECT * FROM piezasmusicales');
+    }
+
+    static fetchOne(pieza_id) {
+        return db.execute('SELECT * FROM piezasmusicales WHERE idPiezaMusical=?', [pieza_id]);
     }
 }
