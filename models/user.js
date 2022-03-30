@@ -1,6 +1,6 @@
 //const usuarios = [];
 
-const db = require('../util/database');
+const db = require('../util/database_labs');
 
 const bcrypt = require('bcryptjs');
 

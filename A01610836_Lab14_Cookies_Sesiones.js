@@ -9,6 +9,8 @@ const csrfProtection = csrf();
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+//app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -42,7 +44,7 @@ app.use('/modulo3', rutasModulo3);
 app.use('/modulo4', rutasModulo4);
 app.use('/inicio', rutaInicio);
 app.use('/users', rutas_usuarios);
-//app.use(cookieParser());
+
 
 //Middleware
 app.use((request, response, next) => {

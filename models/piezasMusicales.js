@@ -1,4 +1,4 @@
-const db = require('../util/databaselab17');
+const db = require('../util/database_labs');
 
 module.exports = class piezasMusicales {
     constructor(nuevo_nombre, nueva_descripcion, nuevo_video){
@@ -6,9 +6,9 @@ module.exports = class piezasMusicales {
         this.descripcion = nueva_descripcion;
         this.video = nuevo_video;
     }
-
+    //'INSERT INTO piezasmusicales(nombre, descripcion, video) VALUES (?,?,?)
     save() {
-        return db.execute('INSERT INTO piezasmusicales(nombre, descripcion, video) VALUES (?,?,?)', [this.nombre, this.descripcion, this.video]);
+        return db.execute('CALL registrarPiezaMusical(?, ?, ?)', [this.nombre, this.descripcion, this.video]);
     }
 
     static fetchAll() {
