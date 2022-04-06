@@ -1,7 +1,15 @@
+const User = require('../models/user');
+
 exports.inicio = (request, response, next) => {
     console.log(request.body);
-    response.render('inicio', {
+    console.log(request.session.usuario);
+    console.log(request.session.username);
+    console.log(request.session.privilegio);
+    console.log(request.session.rol)
+    response.render(request.session.privilegio, {
         nombre: 'Miguel',
-        usuario: request.session.usuario
+        usuario: request.session.usuario,     
     });
 };
+
+

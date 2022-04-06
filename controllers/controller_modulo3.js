@@ -1,4 +1,4 @@
-const calificacionPR = require('../models/calificacion')
+const calificacionPR = require('../models/calificacion');
 const piezasM = require('../models/piezasMusicales');
 
 exports.tituloModulo3 = (request, response, next) => {

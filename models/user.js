@@ -26,9 +26,16 @@ module.exports = class User {
         }); 
     }
     
+    static findRol(usuario) {
+        return db.execute('SELECT idRol FROM usuarios_roles WHERE username=?', [usuario]);
+    }
+
+    static findPrivilege(rol) {
+        return db.execute('SELECT accion FROM privilegio WHERE idPrivilegio IN (SELECT idPrivilegio FROM roles_privilegios WHERE idRol=?)' , [rol]);
+    }
+
     static findOne(usuario) {
         return db.execute(
             'SELECT * FROM usuarios WHERE username=?', [usuario]);
     }
-
 }

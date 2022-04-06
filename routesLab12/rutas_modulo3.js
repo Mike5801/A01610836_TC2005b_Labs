@@ -15,7 +15,7 @@ router.get('/', (request, response, next) => {
 
 router.get('/piezasRomanticismo/', (request, response, next) => {
     console.log(request.body);
-    response.render('piezasRomanticismo')
+    response.render('piezasRomanticismo');
 });
 
 
