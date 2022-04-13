@@ -27,7 +27,7 @@ module.exports = class User {
     }
     
     static findRol(usuario) {
-        return db.execute('SELECT idRol FROM usuarios_roles WHERE username=?', [usuario]);
+        return db.execute('SELECT descripcion_rol, r.idRol FROM usuarios_roles ur, roles r WHERE r.idRol = ur.idRol AND username=?', [usuario]);
     }
 
     static findPrivilege(rol) {

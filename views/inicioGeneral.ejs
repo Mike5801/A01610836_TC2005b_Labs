@@ -30,6 +30,10 @@
     <br> Modulo 5: <br>
     <ul>
         <a href="/users/login"><li>users/login</li></a>
-        <li>NO ERES ADMIN JA!</li>
+        <% if (rol != 'admin') { %>
+            <li>NO ERES ADMIN JA!</li>
+        <% } else { %>
+            <a href="/users/signup"><li>users/signup</li></a>
+        <% } %>
     </ul>
 <%- include('includes/footer.ejs') %>

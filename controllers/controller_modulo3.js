@@ -13,9 +13,14 @@ exports.tituloModulo3 = (request, response, next) => {
 
 exports.piezasRomanticismo = (request, response, next) => {
     console.log(request.body);
+    let flag = false;
+    if (request.session.privilegio.includes('calificarPieza')){
+        flag = true;
+    }
     response.render('piezasRomanticismo', {
         nombre: 'Miguel',
-        usuario: request.session.usuario
+        usuario: request.session.usuario,
+        flag: flag
     });
 }
 
@@ -40,10 +45,16 @@ exports.piezasMusicales = (request, response, next) => {
 }
 
 exports.getPiezasM = (request, response, next) => {
+    let flag = false;
+    if (request.session.privilegio.includes('registrarPieza')){
+        response.render('ingresarPiezas', {
+            usuario: request.session.usuario,
+        });
+    } else {
+        response.redirect('/NoExiste');
+    }
     //console.log('GET /modulo3/ingresarPiezas');
-    response.render('ingresarPiezas', {
-        usuario: request.session.usuario
-    });
+    
 }
 
 exports.postPiestasM = (request, response, next) => {

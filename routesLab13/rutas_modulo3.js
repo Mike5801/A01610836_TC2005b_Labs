@@ -15,8 +15,8 @@ router.get('/nuevaPieza', isAuth, controller_modulo3.getPiezasM);
 
 router.post('/nuevaPieza', isAuth, controller_modulo3.postPiestasM);
 
-router.post('/piezasRomanticismo', isAuth, controller_modulo3.postCalif);
-
 router.get('/:pieza_id', controller_modulo3.filtrar);
+
+router.post('/piezasRomanticismo', isAuth, controller_modulo3.postCalif);
 
 module.exports = router;
