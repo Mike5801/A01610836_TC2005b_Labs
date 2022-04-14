@@ -4,11 +4,20 @@ const piezasM = require('../models/piezasMusicales');
 exports.tituloModulo3 = (request, response, next) => {
     console.log(request.get('Cookie').split('=')[1]);
      //console.log(request.cookies);
-    response.render('modulo3', {
+    piezasM.verComentarios()
+     .then(([rows, fieldData]) => {
+        const comentarios = rows > 0 ? rows : '';
+        console.log(rows);
+        response.render('modulo3', {
         calificacion: calificacionPR.fetchAll(),
-        ultima_calificacion: request.get('Cookie').split('=')[1],
-        usuario: request.session.usuario
-    });
+        ultima_calificacion: request.get('Cookie').split('=')[1].split(';')[0],
+        usuario: request.session.usuario,
+        comentarios: rows
+        });
+     })
+     .catch((error) => {
+         console.log(error);
+     })
 }
 
 exports.piezasRomanticismo = (request, response, next) => {
@@ -54,7 +63,46 @@ exports.getPiezasM = (request, response, next) => {
         response.redirect('/NoExiste');
     }
     //console.log('GET /modulo3/ingresarPiezas');
-    
+}
+
+exports.getComentario = (request, response, next) => {
+    response.status(200).json(null);
+};
+
+exports.saveComentario = (request, response, next) => {
+    //console.log(request.body.comentario);
+    piezasM.registrarComentario(request.body.comentario)
+    .then(() => {
+        response.redirect('/modulo3');
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+};
+
+exports.mostrarComentario = (request, response, next) => {
+    piezasM.verComentarios()
+    .then(([rows, fieldData]) => {
+        response.status(200).json(rows);
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+};
+
+exports.ocultarComentarios = (request, response, next) => {
+    response.status(200).json(null);
+}
+
+exports.getBusqueda = (request, response, next) => {
+    piezasM.busquedaCanciones(request.params.criterio)
+    .then(([rows, fieldData]) => {
+        response.status(200).json(rows);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
 }
 
 exports.postPiestasM = (request, response, next) => {

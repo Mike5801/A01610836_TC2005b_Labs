@@ -6,5 +6,105 @@
     <% } else { %>
         <br>No hay última calificación
     <% } %>
+    <br><br>
+    <button id="agregarComentario">Agregar comentario</button>
+    <div id="cajaComentario"></div>
+    <input id="_csrf" hidden value="<%= csrfToken %>">
+    <br>
+    <button id="desplegarComentarios">Mostrar comentarios</button>
+    <div id="comentariosGuardados"></div>
+
+    <script>
+    const desplegarCarta = () => {
+        // console.log('hola')
+        //El token de protección CSRF
+        const csrf = document.getElementById('_csrf').value;
+        //console.log(csrf);
+
+        //función que manda la petición asíncrona
+        fetch('/modulo3/comentario', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                //'csrf-token': csrf
+            },
+            //body: JSON.stringify(data)
+        }).then(result => {
+            return result.json(); //Regresa otra promesa
+        }).then(data => {
+            //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+            //...
+            let respuesta = '<br>';
+            respuesta += '<form action="/modulo3/guardarComentario" method="POST">'
+            respuesta += '<input type="hidden" name="_csrf" value="'+ csrf +'">'; 
+            respuesta += '<textarea name="comentario" style="width: 300px; height: 100px; "></textarea>';
+            respuesta += '<br><br><input type="submit" value"Enviar">'
+            respuesta += '</form>'
+            document.getElementById("cajaComentario").innerHTML = respuesta;
+            
+        }).catch(err => {
+            console.log(err);
+        });
+    };
+    document.getElementById("agregarComentario").onclick = desplegarCarta;   
+    
+    const desplegarComentarios = () => {
+        // console.log('hola')
+        //El token de protección CSRF
+        //const csrf = document.getElementById('_csrf').value;
+        //console.log(csrf);
+
+        //función que manda la petición asíncrona
+        fetch('/modulo3/mostrarComentario', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                //'csrf-token': csrf
+            },
+            //body: JSON.stringify(data)
+        }).then(result => {
+            return result.json(); //Regresa otra promesa
+        }).then(data => {
+            //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+            //...
+            let respuesta = '';
+            for (comentario of data) {
+                respuesta += '<p style="width: 300px; height: 200px; margin-left: 5px; border: 1px solid;">' + comentario.descripcion + '</p><br><br>'
+            }
+            respuesta += '<button id=ocultarComentarios> Ocultar comentarios</button>'
+            document.getElementById("comentariosGuardados").innerHTML = respuesta;
+            
+            const ocultarComentarios = () => {
+                //const mensaje = document.getElementById('mensaje').value;
+                //El token de protección CSRF
+                //const csrf = document.getElementById('_csrf').value;
+
+                //función que manda la petición asíncrona
+                fetch('/modulo3/ocultarComentarios', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        //'csrf-token': csrf
+                    }
+                    //body: JSON.stringify(data)
+                }).then(result => {
+                    return result.json(); //Regresa otra promesa
+                }).then(data => {
+                    //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+                    //...
+                    let respuesta = '';
+                    document.getElementById("comentariosGuardados").innerHTML = respuesta;
+                }).catch(err => {
+                    console.log(err);
+                });
+                };
+                document.getElementById("ocultarComentarios").onclick = ocultarComentarios;
+
+        }).catch(err => {
+            console.log(err);
+        });
+    };
+    document.getElementById("desplegarComentarios").onclick = desplegarComentarios;
+    </script>
     
 <%- include('includes/footer.ejs') %>

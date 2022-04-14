@@ -18,4 +18,15 @@ module.exports = class piezasMusicales {
     static fetchOne(pieza_id) {
         return db.execute('SELECT * FROM piezasmusicales WHERE idPiezaMusical=?', [pieza_id]);
     }
+
+    static busquedaCanciones(criterio) {
+        return db.execute('SELECT * FROM piezasmusicales WHERE nombre LIKE ? OR descripcion LIKE ?', ['%'+criterio+'%', '%'+criterio+'%']);
+    }
+
+    static registrarComentario(comentario) {
+        return db.execute('INSERT INTO comentarios(descripcion) VALUES (?)', [comentario]);
+    }
+    static verComentarios() {
+        return db.execute('SELECT descripcion FROM comentarios');
+    }
 }

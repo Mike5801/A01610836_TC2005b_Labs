@@ -1,10 +1,15 @@
 <%- include('includes/header.ejs') %>
     <h1>Lista de Piezas musicales</h1>
+    <label for="busqueda">Búsqueda de piezas musicales:</label>
+    <input type="text" name="buscar" id="busqueda">
+    <br><br>
+    <div id="busquedaAjax">
     <% if (piezas.length > 0) { %>
         <table>
             <th>Nombre</th>
             <th>Descripcion</th>
             <th>Video</th>
+        
         <% for (let pieza of piezas) { %>
             <tr>
                 <td> <%= pieza.nombre %></td>
@@ -15,10 +20,56 @@
                     allowfullscreen ></iframe></td>
             </tr>
         <% } %>
+        
         </table>
+        
     <% } else { %>
         <h3>No hay piezas musicales</h3>
     <% } %>
+</div>
+
     <a href="/modulo3/nuevaPieza">Ingresar nueva Pieza</a><br>
     <a href="/inicio">Regresar a inicio con menú de módulos</a>
+
+<script>
+    const busqueda_asincrona = () => {
+        const valorBusqueda = document.getElementById('busqueda').value;
+    //El token de protección CSRF
+    //const csrf = document.getElementById('_csrf').value;
+
+    //función que manda la petición asíncrona
+    
+    fetch('/modulo3/busqueda/' + valorBusqueda, {
+        method: 'GET',
+            headers: {
+            'Content-Type': 'application/json',
+            }
+        }).then(result => {
+            return result.json(); //Regresa otra promesa
+        }).then(data => {
+            //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+            console.log(data);
+            let respuesta = '';
+            respuesta += '<table>'
+            respuesta +='<th>Nombre</th>'
+            respuesta += '<th>Descripcion</th>'
+            respuesta += '<th>Video</th>'
+            for (let pieza of data) {
+                    respuesta += '<tr>';
+                        respuesta += '<td>' + pieza.nombre + '</td>';
+                        respuesta += '<td>' + pieza.descripcion + '</td>';
+                        respuesta += '<td> <iframe  width="560" height="315" src="' + pieza.video + '" title="YouTube video player" frameborder="0" ';
+                        respuesta += 'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>';
+                        respuesta += '</td>';
+                    respuesta += '</tr>';
+            }
+            respuesta += '</table>'
+            document.getElementById('busquedaAjax').innerHTML = respuesta;
+        }).catch(err => {
+            console.log(err);
+        });
+    };
+
+    document.getElementById('busqueda').onkeyup = busqueda_asincrona;
+</script>
 <%- include('includes/footer.ejs') %>
