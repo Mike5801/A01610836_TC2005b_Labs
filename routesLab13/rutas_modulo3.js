@@ -13,6 +13,8 @@ router.get('/mostrarComentario', isAuth, controller_modulo3.mostrarComentario);
 
 router.get('/ocultarComentarios', isAuth, controller_modulo3.ocultarComentarios);
 
+router.get('/busqueda/:criterio', isAuth, controller_modulo3.buscarComentarios);
+
 router.get('/piezasRomanticismo/', isAuth, controller_modulo3.piezasRomanticismo);
 
 router.get('/piezasMusicales', isAuth, controller_modulo3.piezasMusicales);

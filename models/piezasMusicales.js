@@ -29,4 +29,8 @@ module.exports = class piezasMusicales {
     static verComentarios() {
         return db.execute('SELECT descripcion FROM comentarios');
     }
+
+    static buscarComentarios(criterio) {
+        return db.execute('SELECT descripcion FROM comentarios WHERE descripcion LIKE ?', ['%'+criterio+'%']);
+    }
 }

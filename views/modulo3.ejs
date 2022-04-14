@@ -68,25 +68,49 @@
             //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
             //...
             let respuesta = '';
+            respuesta += '<h4> Buscar comentario: </h4>';
+            respuesta += '<input type="text" name="busqueda" id="buscar" placeholder="Hola como estas">';
+            respuesta += '<div id="listaComentarios">';
             for (comentario of data) {
                 respuesta += '<p style="width: 300px; height: 200px; margin-left: 5px; border: 1px solid;">' + comentario.descripcion + '</p><br><br>'
             }
-            respuesta += '<button id=ocultarComentarios> Ocultar comentarios</button>'
+            respuesta += '</div>';
+            respuesta += '<br><button id=ocultarComentarios> Ocultar comentarios</button>'
             document.getElementById("comentariosGuardados").innerHTML = respuesta;
-            
-            const ocultarComentarios = () => {
-                //const mensaje = document.getElementById('mensaje').value;
-                //El token de protección CSRF
-                //const csrf = document.getElementById('_csrf').value;
+//-------------------------------------------------------------------------------------------------------------------------------//    
+            const buscarComentarios = () => {
+            const busqueda = document.getElementById('buscar').value;
 
+            //función que manda la petición asíncrona
+            fetch('/modulo3/busqueda/' + busqueda, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            }).then(result => {
+                return result.json(); //Regresa otra promesa
+            }).then(data => {
+                //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
+                //...
+                let respuesta = '';
+                for (comentario of data) {
+                    respuesta += '<p style="width: 300px; height: 200px; margin-left: 5px; border: 1px solid;">' + comentario.descripcion + '</p><br><br>'
+                }
+                document.getElementById("listaComentarios").innerHTML = respuesta;
+
+            }).catch(err => {
+                console.log(err);
+            });
+            };
+            document.getElementById("buscar").onkeyup = buscarComentarios;
+//-------------------------------------------------------------------------------------------------------------------------------//            
+            const ocultarComentarios = () => {
                 //función que manda la petición asíncrona
                 fetch('/modulo3/ocultarComentarios', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
-                        //'csrf-token': csrf
                     }
-                    //body: JSON.stringify(data)
                 }).then(result => {
                     return result.json(); //Regresa otra promesa
                 }).then(data => {
@@ -99,7 +123,6 @@
                 });
                 };
                 document.getElementById("ocultarComentarios").onclick = ocultarComentarios;
-
         }).catch(err => {
             console.log(err);
         });

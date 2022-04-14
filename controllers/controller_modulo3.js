@@ -94,6 +94,17 @@ exports.ocultarComentarios = (request, response, next) => {
     response.status(200).json(null);
 }
 
+exports.buscarComentarios = (request, response, next) => {
+    console.log(request.params.criterio);
+    piezasM.buscarComentarios(request.params.criterio)
+    .then(([rows, fieldData]) => {
+        response.status(200).json(rows);
+    })
+    .catch( (error) => {
+        console.log(error);
+    })
+}
+
 exports.getBusqueda = (request, response, next) => {
     piezasM.busquedaCanciones(request.params.criterio)
     .then(([rows, fieldData]) => {
