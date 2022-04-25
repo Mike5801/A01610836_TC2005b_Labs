@@ -31,4 +31,6 @@ router.get('/:pieza_id', controller_modulo3.filtrar);
 
 router.post('/piezasRomanticismo', isAuth, controller_modulo3.postCalif);
 
+router.post('/comentarioPM', isAuth, controller_modulo3.comentarioPM);
+
 module.exports = router;

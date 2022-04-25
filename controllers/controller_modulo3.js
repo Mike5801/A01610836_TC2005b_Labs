@@ -145,3 +145,14 @@ exports.filtrar = (request, response, next) => {
             console.log(err);
         }); 
 }
+
+exports.comentarioPM = (request, response, next) => {
+    piezasM.registrarComentarioPM(request.body.idPieza, request.body.comentario)
+    .then(() => {
+        response.redirect('/modulo3/piezasMusicales');
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+
+}

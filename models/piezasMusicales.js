@@ -33,4 +33,8 @@ module.exports = class piezasMusicales {
     static buscarComentarios(criterio) {
         return db.execute('SELECT descripcion FROM comentarios WHERE descripcion LIKE ?', ['%'+criterio+'%']);
     }
+
+    static registrarComentarioPM (id, comentario) {
+        return db.execute('UPDATE piezasmusicales SET comentario = ? WHERE idPiezaMusical = ?', [comentario, id]);
+    }
 }

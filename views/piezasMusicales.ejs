@@ -1,4 +1,10 @@
 <%- include('includes/header.ejs') %>
+<head>
+
+
+
+
+</head>
     <h1>Lista de Piezas musicales</h1>
     <label for="busqueda">Búsqueda de piezas musicales:</label>
     <input type="text" name="buscar" id="busqueda">
@@ -18,7 +24,21 @@
                     src="<%= pieza.video %>" title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen ></iframe></td>
+                <td><a class="btn-large blue modal-trigger" href="#hola?nombre= <%=pieza.idPiezaMusical %>">Modal</a></td>
+                <td><%= pieza.idPiezaMusical %></td>
             </tr>
+            <div id="hola?nombre= <%=pieza.idPiezaMusical %>" class="modal">
+                <div class="modal-content">
+                  <h4>Comentario</h4>
+                  <form action="/modulo3/comentarioPM" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+                    <textarea name="comentario"></textarea>
+                    <input value="<%= pieza.nombre %>" name="nombrePieza" hidden>
+                    <input value="<%= pieza.idPiezaMusical %>" name="idPieza" hidden>
+                    <button type="submit" class="btn green">Enviar</button>
+                  </form>
+                </div>
+            </div>
         <% } %>
         
         </table>
