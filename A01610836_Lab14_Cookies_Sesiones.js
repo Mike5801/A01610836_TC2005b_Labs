@@ -3,9 +3,12 @@ const app = express();
 const path = require('path');
 //const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const multer = require('multer');
 
 const csrf = require('csurf');
 const csrfProtection = csrf();
+
+
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
@@ -13,6 +16,19 @@ app.use(bodyParser.json());
 //app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'uploads')));
+
+const fileStorage = multer.diskStorage({
+    destination: (request, file, callback) => {
+        callback(null, 'uploads');
+    },
+    filename: (request, file, callback) => {
+        //aquí configuramos el nombre que queremos que tenga el archivo en el servidor, 
+        //para que no haya problema si se suben 2 archivos con el mismo nombre concatenamos el timestamp
+        callback(null, new Date().getTime() + '-' + file.originalname);
+    },
+});
+app.use(multer({ storage: fileStorage }).single('video'));
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');

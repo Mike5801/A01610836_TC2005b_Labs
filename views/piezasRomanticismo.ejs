@@ -33,6 +33,12 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
+                    <% for (let pr of piezaR) { %>
+                        <h3><%= pr.nombre %></h3>
+                        <h6><%= pr.descripcion %></h6>
+                        <video src="<%= pr.video %>"> </video>
+                    <% } %>
+                    
                     <% if (flag == true) { %>
                     <form action="/modulo3/piezasRomanticismo" method="POST">
                         <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
@@ -41,4 +47,5 @@
                         min="1" max="10"><input type="submit" value="Enviar_calificacion">
                     </form>
                     <% } %>
+
 <%- include('includes/footer.ejs') %>

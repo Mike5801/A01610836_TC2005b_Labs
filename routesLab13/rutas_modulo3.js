@@ -25,12 +25,17 @@ router.post('/nuevaPieza', isAuth, controller_modulo3.postPiestasM);
 
 router.get('/busqueda/:criterio', isAuth, controller_modulo3.getBusqueda);
 
-router.get('/comentario', isAuth, controller_modulo3.getComentario)
+router.get('/comentario', isAuth, controller_modulo3.getComentario);
+
+router.get('/ingresarPR', isAuth, controller_modulo3.registrarPRGET);
+
+router.post('/ingresarPR', isAuth, controller_modulo3.registrarPRPOST)
 
 router.get('/:pieza_id', controller_modulo3.filtrar);
 
 router.post('/piezasRomanticismo', isAuth, controller_modulo3.postCalif);
 
 router.post('/comentarioPM', isAuth, controller_modulo3.comentarioPM);
+;
 
 module.exports = router;

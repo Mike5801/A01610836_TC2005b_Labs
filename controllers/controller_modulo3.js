@@ -26,11 +26,19 @@ exports.piezasRomanticismo = (request, response, next) => {
     if (request.session.privilegio.includes('calificarPieza')){
         flag = true;
     }
-    response.render('piezasRomanticismo', {
-        nombre: 'Miguel',
-        usuario: request.session.usuario,
-        flag: flag
+    piezasM.getPR()
+    .then(([rows, fieldData]) => {
+        response.render('piezasRomanticismo', {
+            nombre: 'Miguel',
+            usuario: request.session.usuario,
+            flag: flag,
+            piezaR: rows
+        });
+    })
+    .catch((error) => {
+        console.log(error);
     });
+
 }
 
 exports.postCalif = (request, response, next) => {
@@ -156,3 +164,24 @@ exports.comentarioPM = (request, response, next) => {
     })
 
 }
+
+exports.registrarPRGET = (request, response, next) => {
+    response.render('ingresarPiezaRom', {
+        usuario: request.session.usuario
+    });
+};
+
+exports.registrarPRPOST = (request, response, next) => {
+    console.log(request.body.nombre);
+    console.log(request.body.descripcion);
+    console.log(request.file.filename);
+
+    piezasM.registrarPR(request.body.nombre, request.body.descripcion, '/' + request.file.filename)
+    .then(() => {
+        response.redirect('/modulo3/piezasRomanticismo');
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+};

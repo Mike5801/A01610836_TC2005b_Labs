@@ -1,0 +1,15 @@
+<%- include('includes/header.ejs') %>
+<h3>Ingresar Piezas Romanticistas</h3> <br>
+<form action="/modulo3/ingresarPR" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+    <label for="nombre">Nombre de la pieza:</label>
+    <input type="text" name="nombre" placeholder=""> <br>
+    <label for="descripcion">Descripcion</label>
+    <input type="text" name="descripcion" placeholder="Descripcion de la pieza"> <br>
+    <label for="video">Video:</label>
+    <input type="file" name="video">
+    <br><br>
+    <input type="submit" value="Enviar">
+</form>
+
+<%- include('includes/footer.ejs') %>

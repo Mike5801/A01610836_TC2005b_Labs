@@ -37,4 +37,12 @@ module.exports = class piezasMusicales {
     static registrarComentarioPM (id, comentario) {
         return db.execute('UPDATE piezasmusicales SET comentario = ? WHERE idPiezaMusical = ?', [comentario, id]);
     }
+
+    static registrarPR (nombre, descripcion, video) {
+        return db.execute('INSERT INTO piezasromanticistas (nombre, descripcion, video) VALUES (?, ?, ?)', [nombre, descripcion, video]);
+    }
+
+    static getPR(){
+        return db.execute('SELECT * FROM piezasromanticistas');
+    }
 }
