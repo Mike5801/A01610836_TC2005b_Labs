@@ -1,11 +1,23 @@
 const calificacionPR = require('../models/calificacion');
 const piezasM = require('../models/piezasMusicales');
+const nodemailer = require('nodemailer');
+const noReplyjson = require('../no_reply_email.json');
+const { path } = require('express/lib/application');
+
+const transporter = nodemailer.createTransport({
+    service: "hotmail",
+    auth: {
+        user: noReplyjson.email,
+        pass: noReplyjson.password
+    }
+});
 
 exports.tituloModulo3 = (request, response, next) => {
     console.log(request.get('Cookie').split('=')[1]);
      //console.log(request.cookies);
     piezasM.verComentarios()
      .then(([rows, fieldData]) => {
+        
         const comentarios = rows > 0 ? rows : '';
         console.log(rows);
         response.render('modulo3', {
@@ -157,12 +169,24 @@ exports.filtrar = (request, response, next) => {
 exports.comentarioPM = (request, response, next) => {
     piezasM.registrarComentarioPM(request.body.idPieza, request.body.comentario)
     .then(() => {
-        response.redirect('/modulo3/piezasMusicales');
+        const options = {
+            from: "no-reply-NATGAS@hotmail.com",
+            to: "porqueriasmiguel@hotmail.com",
+            subject: "Test de email de NO-REPLY NATGAS",
+            html: { path: 'A01610836_Lab1.html' }
+        }
+        transporter.sendMail(options)
+        .then((info) =>{
+            console.log(info);
+            response.redirect('/modulo3/piezasMusicales');
+        })
+        .catch((error) => {
+            console.log(error);
+        })
     })
     .catch((error) => {
-        console.log(error);
-    })
-
+        console.log(error)
+    });
 }
 
 exports.registrarPRGET = (request, response, next) => {
