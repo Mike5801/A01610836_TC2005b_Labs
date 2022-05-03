@@ -1,0 +1,13 @@
+Implementado en el proyecto al utilizar el API de Google Cloud SQL para hacer la conexión con la base de datos remota
+
+Pregunta del laboratorio:
+¿Qué ventajas y desventajas tiene la integración de tus aplicaciones web con servicios web desarrollados por terceros?
+Ventajas:
+-El servicio no depende de la implementación del cliente o del servidor
+-Son portables
+-Permite utilizar servicios sin la necesidad de implementarlos desde cero
+-Se pueden desarrollar de manera independiente
+
+Desventajas:
+-No hay un control de su disponibilidad debido a que es un servicio de terceros
+-Si existe alguna actualización del API, puede causar problemas, debido a que los cambios pueden no ajustarse a la aplicación.
